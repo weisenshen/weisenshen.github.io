@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024 Workshop | USAge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --ice-white: #f8fafc; --glacier-blue: #1e3a5f; --deep-ocean: #0f2847; --aurora-teal: #2dd4bf; --arctic-sky: #38bdf8; --snow-gray: #e2e8f0; --rock-gray: #64748b; --text-primary: #1e293b; --text-secondary: #475569; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Source Sans 3', sans-serif; line-height: 1.6; color: var(--text-primary); background: var(--ice-white); }
+        .nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(15, 40, 71, 0.98); backdrop-filter: blur(10px); z-index: 1000; padding: 0 2rem; }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 70px; }
+        .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: white; }
+        .nav-logo-icon { width: 40px; height: 40px; background: linear-gradient(135deg, var(--aurora-teal), var(--arctic-sky)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1rem; color: var(--deep-ocean); }
+        .nav-logo-text { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: rgba(255, 255, 255, 0.9); text-decoration: none; font-weight: 500; }
+        .nav-links a:hover { color: var(--aurora-teal); }
+        .page-header { background: linear-gradient(135deg, var(--deep-ocean), var(--glacier-blue)); padding: 140px 2rem 80px; color: white; }
+        .page-header-content { max-width: 1000px; margin: 0 auto; }
+        .breadcrumb { display: flex; gap: 8px; margin-bottom: 1.5rem; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--aurora-teal); text-decoration: none; }
+        .breadcrumb span { color: rgba(255, 255, 255, 0.6); }
+        .page-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 1rem; line-height: 1.2; }
+        .page-meta { display: flex; flex-wrap: wrap; gap: 2rem; color: rgba(255, 255, 255, 0.8); }
+        .content { max-width: 1000px; margin: 0 auto; padding: 4rem 2rem; }
+        .intro { background: white; border-radius: 16px; padding: 2.5rem; margin-bottom: 3rem; box-shadow: 0 4px 20px rgba(30, 58, 95, 0.08); }
+        .intro p { color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8; }
+        .section-divider { height: 3px; background: linear-gradient(90deg, var(--aurora-teal), var(--arctic-sky), transparent); margin: 3rem 0; }
+        h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--glacier-blue); margin-bottom: 2rem; }
+        .part-header { background: linear-gradient(135deg, var(--glacier-blue), var(--deep-ocean)); color: white; padding: 1rem 1.5rem; border-radius: 12px; margin: 2rem 0 1rem; font-weight: 600; }
+        .session-block { background: white; border-radius: 12px; padding: 2rem; margin-bottom: 1.5rem; box-shadow: 0 2px 10px rgba(30, 58, 95, 0.06); border: 1px solid var(--snow-gray); }
+        .session-block h3 { color: var(--glacier-blue); font-size: 1.2rem; margin-bottom: 0.5rem; }
+        .session-time { color: var(--aurora-teal); font-weight: 600; margin-bottom: 1rem; }
+        .session-desc { color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.7; }
+        .speakers { background: var(--ice-white); padding: 1rem; border-radius: 8px; }
+        .speakers-label { font-weight: 600; color: var(--glacier-blue); margin-bottom: 0.5rem; font-size: 0.9rem; }
+        .speaker-list { color: var(--text-secondary); }
+        .break-item { background: var(--ice-white); padding: 0.75rem 1.5rem; border-radius: 8px; color: #f59e0b; font-weight: 600; margin: 1rem 0; text-align: center; }
+        .venue-card { background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 10px rgba(30, 58, 95, 0.06); margin-top: 2rem; }
+        .venue-card h3 { color: var(--glacier-blue); margin-bottom: 1rem; }
+        .venue-card p { color: var(--text-secondary); }
+        .footer { background: var(--glacier-blue); color: white; padding: 2rem; text-align: center; margin-top: 4rem; }
+        .footer a { color: var(--aurora-teal); text-decoration: none; }
+        @media (max-width: 768px) { .nav-links { display: none; } .page-header { padding: 120px 1.5rem 60px; } .content { padding: 2rem 1rem; } .page-meta { flex-direction: column; gap: 0.5rem; } }
+    </style>
+</head>
+<body>
+    <nav class="nav"><div class="nav-container"><a href="../index.html" class="nav-logo"><div class="nav-logo-icon">US</div><span class="nav-logo-text">USAge</span></a><ul class="nav-links"><li><a href="../index.html#about">About</a></li><li><a href="../index.html#workshops">Workshops</a></li><li><a href="../index.html#contact">Contact</a></li></ul></div></nav>
+
+    <header class="page-header">
+        <div class="page-header-content">
+            <div class="breadcrumb"><a href="../index.html">Home</a><span>/</span><a href="../index.html#workshops">Workshops</a><span>/</span><span>2024</span></div>
+            <h1>INSTANT II Follow-on Workshop on the Future of Geodetic-Geophysical Observational Networks in Antarctica</h1>
+            <div class="page-meta">
+                <span>📅 September 28, 2024</span>
+                <span>📍 Washington Dulles Marriott Suites, Herndon, VA</span>
+                <span>🌐 Hybrid (In-person + Zoom)</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="content">
+        <div class="intro">
+            <p>A follow-on workshop to the 2022 Fort Collins meeting, focused on reviewing past accomplishments, ongoing challenges, and building a sustainable community strategy for the future of polar geophysical research. The workshop featured presentations from international partners, US field project PIs, and discussions on community-driven models and NSF future planning.</p>
+        </div>
+
+        <div class="section-divider"></div>
+        <h2>Agenda</h2>
+
+        <div class="session-block"><h3>Introduction and Housekeeping</h3><div class="session-time">8:30 AM – 8:45 AM</div><div class="speakers"><div class="speakers-label">Organizers:</div><div class="speaker-list">Rick Aster and Weisen Shen</div></div></div>
+
+        <div class="part-header">Part 1: Morning Sessions – Past Accomplishments and Ongoing Challenges</div>
+
+        <div class="session-block"><h3>Session 1: What is Happening in Our International Partners</h3><div class="session-time">8:45 AM – 9:45 AM</div><div class="session-desc">Learning from international colleagues about other national programs' ongoing progress and future priorities in polar geophysical investigations.</div><div class="speakers"><div class="speakers-label">Speakers:</div><div class="speaker-list">Anya Reading (Australia); Fausto Ferraccioli (Italy); Andrew Lloyd (SCAR-INSTANT)</div></div></div>
+
+        <div class="break-item">☕ Coffee Break (9:45 AM – 10:00 AM)</div>
+
+        <div class="session-block"><h3>Session 2: US Field Projects Overview</h3><div class="session-time">10:00 AM – 11:30 AM</div><div class="session-desc">Overview of various field projects with presentations from PIs of ITGC, POLENET, South Pole DAS array, etc.</div><div class="speakers"><div class="speakers-label">Speakers:</div><div class="speaker-list">Marianne Karplus; Terry Wilson; Sam Hansen; Paul Winberry; Zhongwen Zhan; Brad Lipovsky</div></div></div>
+
+        <div class="session-block"><h3>NSF Addressing Future Planning</h3><div class="session-time">11:30 AM – 12:00 PM</div><div class="speakers"><div class="speakers-label">Speaker:</div><div class="speaker-list">Mike Jackson (NSF)</div></div></div>
+
+        <div class="break-item">🍽️ Lunch Break (12:00 PM – 1:00 PM)</div>
+
+        <div class="part-header">Part 2: Afternoon Sessions – Building a Community with a Strategy</div>
+
+        <div class="session-block"><h3>Session 3: Lessons from Other Community-driven Projects</h3><div class="session-time">1:15 PM – 2:45 PM</div><div class="session-desc">Discussion of different operation models for deploying instrumentation in logistically challenged regions including the Alaska Amphibious Array, SZ4D, and ITGC drilling projects.</div><div class="speakers"><div class="speakers-label">Speakers:</div><div class="speaker-list">Douglas Wiens; Wenyuan Fan (SZ4D, Greenland); John Goodge (RAID); Molly Patterson (International Geology Drilling)</div></div></div>
+
+        <div class="break-item">☕ Coffee Break (2:45 PM – 3:15 PM)</div>
+
+        <div class="session-block"><h3>Session 4: Current Challenges and Opportunities</h3><div class="session-time">3:15 PM – 4:30 PM</div><div class="session-desc">Discussion of challenges facing the US polar geophysics community, from maintaining facilities to sustaining healthy community building through EarthScope.</div><div class="speakers"><div class="speakers-label">Speakers:</div><div class="speaker-list">Joe Pettit (EPIC); Robert Anthony (USGS); Sam Hansen (EarthScope)</div></div></div>
+
+        <div class="session-block"><h3>Session 5: Building a Sustainable Community</h3><div class="session-time">4:45 PM and beyond</div><div class="session-desc">Discussions on how to build a sustainable model to routinely gather polar geophysical community input, including re-institution of a successor to the IRIS/UNAVCO Polar Science and Technology Committee.</div></div>
+
+        <div class="venue-card">
+            <h3>Venue Information</h3>
+            <p><strong>Washington Dulles Marriott Suites</strong><br>13101 Worldgate Drive, Herndon, VA 20170<br>Phone: +1 703-709-0400</p>
+            <p style="margin-top: 1rem;">Located near Dulles International Airport, with the Herndon Metro Station only 1 mile away for easy access to Washington D.C.</p>
+        </div>
+    </main>
+
+    <footer class="footer"><p>© 2024 USAge | <a href="../index.html">Return to Home</a></p></footer>
+</body>
+</html>
