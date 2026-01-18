@@ -3,240 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="USAge - US Antarctica/Arctic Geophysical Explorations - Coordinating polar geophysics research and workshops">
-    <title>USAge | US Antarctica/Arctic Geophysical Explorations</title>
+    <meta name="description" content="USAGE - US Antarctica/Arctic Geophysical Explorations - Coordinating polar geophysics research">
+    <title>USAGE | US Antarctica/Arctic Geophysical Explorations</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&family=Crimson+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <nav class="nav">
+    <!-- Navigation -->
+    <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <img src="images/logo.svg" alt="USAge Collaborations">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">❄</div>
+                <div class="logo-text">
+                    <span class="logo-main">USAGE</span>
+                    <span class="logo-sub">Collaborations</span>
+                </div>
             </a>
             
-            <div class="nav-links">
-                <a href="#mission">Mission</a>
-                <a href="workshops.html">Workshops</a>
-                <a href="news.html">News</a>
-                <a href="team.html">Team</a>
-                <a href="publications.html">Publications</a>
-                <a href="#contact">Contact</a>
-            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="workshops.html">Workshops</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="publications.html">Publications</a></li>
+            </ul>
         </div>
     </nav>
 
-    <header class="hero">
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="hero-content">
-            <span class="hero-badge">SCAR-INSTANT Program</span>
-            <h1>USAge</h1>
+            <span class="hero-badge">NSF-Funded Community Initiative</span>
+            <h1 class="hero-title">A hub for building connections in polar geophysics research</h1>
             <p class="hero-subtitle">US Antarctica / Arctic Geophysical Explorations</p>
-            <p>Coordinating polar geophysics research to probe the solid Earth and its interactions with the cryosphere</p>
+            <p class="hero-description">
+                USAGE coordinates workshops and activities of the US polar geophysics community,
+                probing the solid Earth and its interactions with the cryosphere through NSF-funded community development.
+            </p>
             <div class="hero-buttons">
-                <a href="workshops.html" class="btn btn-primary">View Workshops</a>
-                <a href="#get-involved" class="btn btn-secondary">Get Involved</a>
+                <a href="#about" class="btn btn-primary">Learn More</a>
+                <a href="workshops.html" class="btn btn-secondary">View Workshops</a>
             </div>
         </div>
-    </header>
+    </section>
 
-    <div class="content-wrapper">
-        
-        <main>
-            <section id="mission">
-                <h2 class="section-title">Scientific Mission</h2>
-                <p class="intro-text">
-                    USAge coordinates and documents workshops and activities of the US polar geophysics community, with strong alignment to the SCAR-INSTANT Probing the Solid Earth and its Interactions (PSE) group. We serve as a permanent archive of past workshops and as a coordination point for future community activities.
-                </p>
-                
-                <div class="about-item">
-                    <h3><span class="about-item-icon">📡</span> Observational Networks</h3>
-                    <p>Coordinating GNSS, seismic, and geodetic networks across Antarctica and the Arctic to monitor crustal deformation, ice sheet dynamics, and glacial isostatic adjustment (GIA).</p>
+    <!-- About Section -->
+    <section id="about" class="section section-light">
+        <div class="container">
+            <h2 class="section-heading">Coordinating US Polar Geophysics Research</h2>
+            <p class="section-intro">
+                USAGE serves as a permanent archive of past workshops and as a coordination point for future 
+                community activities, with strong alignment to the SCAR-INSTANT Probing the Solid Earth and its 
+                Interactions (PSE) group.
+            </p>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Observational Networks</h3>
+                    <p>Coordinating GNSS, seismic, and geodetic networks across Antarctica and the Arctic to monitor crustal deformation and ice sheet dynamics.</p>
                 </div>
                 
-                <div class="about-item">
-                    <h3><span class="about-item-icon">❄️</span> Interdisciplinary Science</h3>
-                    <p>Integrating seismology, geodesy, and glaciology to understand complex interactions between ice sheets and the solid Earth, advancing our knowledge of polar geophysics.</p>
+                <div class="feature-card">
+                    <div class="feature-icon">🔬</div>
+                    <h3>Interdisciplinary Science</h3>
+                    <p>Integrating seismology, geodesy, and glaciology to understand interactions between ice sheets and the solid Earth.</p>
                 </div>
-
-                <div class="about-item">
-                    <h3><span class="about-item-icon">🤝</span> Community Coordination</h3>
-                    <p>Building connections among researchers, facilitating collaboration, and defining grand challenges for the next decade of polar geophysical research.</p>
-                </div>
-            </section>
-
-            <section id="workshops" style="margin-top: 5rem;">
-                <h2 class="section-title">Recent Workshops</h2>
                 
-                <div class="workshop-item">
-                    <span class="ws-meta">SEPTEMBER 2024 • HERNDON, VA</span>
-                    <h3 class="ws-title">INSTANT II Follow-on Workshop</h3>
-                    <p>Focused on the future of geodetic-geophysical observational networks and US field projects including ITGC and POLENET. Participants discussed infrastructure needs, data management, and collaborative opportunities.</p>
-                    <br>
-                    <a href="workshops/2024-herndon.html" class="ws-link">VIEW PROGRAM →</a>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Community Coordination</h3>
+                    <p>Building connections among researchers and defining grand challenges for the next decade of polar geophysics.</p>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="workshop-item">
-                    <span class="ws-meta">OCTOBER 2022 • FORT COLLINS, CO</span>
-                    <h3 class="ws-title">The Future of Observational Networks in Polar Regions</h3>
-                    <p>The foundational workshop for the SCAR-INSTANT "Probing the Solid Earth" theme. Established key research priorities and community coordination mechanisms.</p>
-                    <br>
-                    <a href="workshops/2022-fortcollins.html" class="ws-link">VIEW REPORT →</a>
-                </div>
+    <!-- Latest News -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-heading">Latest News</h2>
+                <a href="news.html" class="section-link">View All News</a>
+            </div>
 
-                <div style="margin-top: 2rem; text-align: center;">
-                    <a href="workshops.html" class="btn btn-outline">View All Workshops</a>
-                </div>
-            </section>
-
-            <section id="news" style="margin-top: 5rem;">
-                <h2 class="section-title">Latest News</h2>
-                
-                <div class="news-item">
+            <div class="news-grid">
+                <article class="news-card">
                     <div class="news-date">January 2026</div>
                     <h3>Planning Underway for 2026 Workshop</h3>
-                    <p>The USAge organizing committee is currently planning the next community workshop. Stay tuned for announcements about dates, location, and registration.</p>
-                    <a href="news.html" class="news-link">Read More →</a>
-                </div>
+                    <p>The USAGE organizing committee is planning the next community workshop. Stay tuned for announcements about dates and location.</p>
+                    <a href="news.html" class="card-link">Read More...</a>
+                </article>
 
-                <div class="news-item">
+                <article class="news-card">
                     <div class="news-date">September 2024</div>
                     <h3>Successful Herndon Workshop Concludes</h3>
-                    <p>Over 40 participants gathered to discuss the future of polar geophysical observational networks. Workshop materials and presentations now available.</p>
-                    <a href="news.html" class="news-link">Read More →</a>
+                    <p>Over 40 participants gathered to discuss the future of polar geophysical observational networks.</p>
+                    <a href="news.html" class="card-link">Read More...</a>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-date">June 2024</div>
+                    <h3>NSF Grant Supports Community Coordination</h3>
+                    <p>National Science Foundation awards funding (OPP-2235061) to support community coordination activities.</p>
+                    <a href="news.html" class="card-link">Read More...</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Workshops -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-heading">Recent Workshops</h2>
+                <a href="workshops.html" class="section-link">View All Workshops</a>
+            </div>
+
+            <div class="workshop-list">
+                <div class="workshop-card">
+                    <div class="workshop-header">
+                        <div class="workshop-date">September 2024 • Herndon, VA</div>
+                        <h3>INSTANT II Follow-on Workshop</h3>
+                    </div>
+                    <p>Focused on the future of geodetic-geophysical observational networks and US field projects including ITGC and POLENET.</p>
+                    <a href="workshops/2024-herndon.html" class="btn btn-outline-small">View Program</a>
                 </div>
 
-                <div style="margin-top: 2rem; text-align: center;">
-                    <a href="news.html" class="btn btn-outline">View All News</a>
+                <div class="workshop-card">
+                    <div class="workshop-header">
+                        <div class="workshop-date">October 2022 • Fort Collins, CO</div>
+                        <h3>The Future of Observational Networks in Polar Regions</h3>
+                    </div>
+                    <p>The foundational workshop establishing the SCAR-INSTANT "Probing the Solid Earth" theme and community priorities.</p>
+                    <a href="workshops/2022-fortcollins.html" class="btn btn-outline-small">View Report</a>
                 </div>
-            </section>
+            </div>
+        </div>
+    </section>
 
-            <section id="get-involved" style="margin-top: 5rem; background: var(--light-gray); padding: 3rem; margin-left: -2rem; margin-right: -2rem;">
-                <h2 class="section-title">Get Involved</h2>
-                <p class="intro-text">Join our community and stay informed about upcoming workshops, meetings, and collaborative opportunities.</p>
-                
-                <div class="cta-box">
-                    <h3>Join Our Mailing List</h3>
-                    <p>Receive updates about workshops, publications, and community activities.</p>
-                    <form class="signup-form" action="https://forms.gle/your-form-link" method="get" target="_blank">
-                        <input type="email" placeholder="Enter your email address" required>
-                        <button type="submit" class="btn btn-primary">Subscribe</button>
-                    </form>
-                    <p style="font-size: 0.85rem; color: #666; margin-top: 1rem;">We respect your privacy and will never share your information.</p>
+    <!-- Get Involved -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Join Our Community</h2>
+                <p>Stay informed about upcoming workshops, publications, and collaborative opportunities in polar geophysics research.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary">Subscribe to Mailing List</a>
+                    <a href="mailto:Weisen.Shen@stonybrook.edu" class="btn btn-secondary">Contact Us</a>
                 </div>
-            </section>
+            </div>
+        </div>
+    </section>
 
-        </main>
-
-        <aside id="partners">
+    <!-- Partners -->
+    <section class="section section-light">
+        <div class="container">
+            <h2 class="section-heading">Affiliated Organizations & Related Projects</h2>
             
-            <div class="sidebar-box">
-                <h4 class="sidebar-title">Affiliated Organizations</h4>
-                
-                <a href="https://www.scar-instant.org/" target="_blank" class="partner-link">
-                    <span class="partner-icon">🌍</span>
-                    <div>
-                        <span class="partner-name">SCAR-INSTANT</span>
-                        <div class="partner-desc">Scientific Committee on Antarctic Research</div>
-                    </div>
-                    <span class="partner-arrow">→</span>
+            <div class="partner-grid">
+                <a href="https://www.scar-instant.org/" target="_blank" class="partner-card">
+                    <h4>SCAR-INSTANT</h4>
+                    <p>Scientific Committee on Antarctic Research</p>
                 </a>
 
-                <a href="https://www.nsf.gov/" target="_blank" class="partner-link">
-                    <span class="partner-icon">🔬</span>
-                    <div>
-                        <span class="partner-name">National Science Foundation</span>
-                        <div class="partner-desc">Award #2235061</div>
-                    </div>
-                    <span class="partner-arrow">→</span>
-                </a>
-            </div>
-
-            <div class="sidebar-box">
-                <h4 class="sidebar-title">Related Projects</h4>
-                
-                <a href="https://coldex.org/" target="_blank" class="partner-link">
-                    <span class="partner-icon">❄️</span>
-                    <div>
-                        <span class="partner-name">COLDEX</span>
-                        <div class="partner-desc">Center for Oldest Ice Exploration</div>
-                    </div>
-                    <span class="partner-arrow">→</span>
+                <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2235061" target="_blank" class="partner-card">
+                    <h4>National Science Foundation</h4>
+                    <p>Award #2235061</p>
                 </a>
 
-                <a href="https://www.rapidaccessicedrill.org/" target="_blank" class="partner-link">
-                    <span class="partner-icon">🔩</span>
-                    <div>
-                        <span class="partner-name">RAID</span>
-                        <div class="partner-desc">Rapid Access Ice Drill</div>
-                    </div>
-                    <span class="partner-arrow">→</span>
+                <a href="https://coldex.org/" target="_blank" class="partner-card">
+                    <h4>COLDEX</h4>
+                    <p>Center for Oldest Ice Exploration</p>
                 </a>
 
-                <a href="https://herculesdome.org/" target="_blank" class="partner-link">
-                    <span class="partner-icon">🏔️</span>
-                    <div>
-                        <span class="partner-name">Hercules Dome</span>
-                        <div class="partner-desc">Ice Core Project</div>
-                    </div>
-                    <span class="partner-arrow">→</span>
+                <a href="https://herculesdome.org/" target="_blank" class="partner-card">
+                    <h4>Hercules Dome</h4>
+                    <p>Ice Core Project</p>
                 </a>
 
-                <a href="https://icecube.wisc.edu/" target="_blank" class="partner-link">
-                    <span class="partner-icon">🧊</span>
-                    <div>
-                        <span class="partner-name">IceCube</span>
-                        <div class="partner-desc">Neutrino Observatory</div>
-                    </div>
-                    <span class="partner-arrow">→</span>
+                <a href="https://www.rapidaccessicedrill.org/" target="_blank" class="partner-card">
+                    <h4>RAID</h4>
+                    <p>Rapid Access Ice Drill</p>
+                </a>
+
+                <a href="https://icecube.wisc.edu/" target="_blank" class="partner-card">
+                    <h4>IceCube</h4>
+                    <p>Neutrino Observatory</p>
                 </a>
             </div>
+        </div>
+    </section>
 
-            <div class="sidebar-box" style="background: white; border: 1px solid #eee;">
-                <h4 class="sidebar-title">Workshop Coordinators</h4>
-                <ul class="team-list">
-                    <li>
-                        <span class="team-name">Weisen Shen</span>
-                        <span class="team-role">Stony Brook University</span>
-                    </li>
-                    <li>
-                        <span class="team-name">Rick Aster</span>
-                        <span class="team-role">Colorado State University</span>
-                    </li>
-                    <li>
-                        <span class="team-name">Mirko Scheinert</span>
-                        <span class="team-role">TU Dresden</span>
-                    </li>
-                </ul>
-                <a href="team.html" class="view-all-link">View Full Team →</a>
-            </div>
-
-            <div class="sidebar-box" style="background: var(--primary-blue); color: white;">
-                <h4 class="sidebar-title" style="color: white; border-color: rgba(255,255,255,0.3);">Quick Links</h4>
-                <ul class="quick-links">
-                    <li><a href="workshops.html">Workshop Archive</a></li>
-                    <li><a href="publications.html">Publications</a></li>
-                    <li><a href="team.html">Meet Our Team</a></li>
-                    <li><a href="news.html">News & Updates</a></li>
-                    <li><a href="/cdn-cgi/l/email-protection#fcab99958f9992d2af949992bc8f889392859e8e939397d2999889">Contact Us</a></li>
-                </ul>
-            </div>
-
-        </aside>
-
-    </div>
-
-    <footer class="footer" id="contact">
-        <div class="footer-content">
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
             <div class="footer-section">
-                <h2 style="color:white; margin-bottom:0.5rem;">USAge Collaborations</h2>
-                <p style="opacity:0.8; margin-bottom: 1rem;">US Antarctica / Arctic Geophysical Explorations</p>
-                <p style="font-size: 0.9rem; opacity: 0.7; line-height: 1.6;">
-                    This material is based upon work supported by the National Science Foundation under grant number <strong>OPP-2235061</strong>. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
+                <h3>USAGE Collaborations</h3>
+                <p>US Antarctica / Arctic Geophysical Explorations</p>
+                <p class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="workshops.html">Workshops</a>
+                    <a href="news.html">News</a>
+                    <a href="team.html">Team</a>
+                    <a href="publications.html">Publications</a>
                 </p>
             </div>
-            <div class="footer-section" style="text-align: right;">
-                <h3 style="color:white; margin-bottom: 1rem; font-size: 1.1rem;">Contact</h3>
-                <p><a href="/cdn-cgi/l/email-protection#3661535f45535818655e535876454259584f544459595d18535243" style="color:white; text-decoration: underline;"><span class="__cf_email__" data-cfemail="a6f1c3cfd5c3c888f5cec3c8e6d5d2c9c8dfc4d4c9c9cd88c3c2d3">[email&#160;protected]</span></a></p>
-                <p style="margin-top: 1.5rem; opacity: 0.7; font-size: 0.85rem;"
+
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><a href="mailto:Weisen.Shen@stonybrook.edu">Weisen.Shen@stonybrook.edu</a></p>
+            </div>
+        </div>
+
+        <div class="footer-disclaimer">
+            <p>
+                This material is based upon work supported by the National Science Foundation under grant number 
+                <strong>OPP-2235061</strong>. Any opinions, findings, and conclusions or recommendations expressed 
+                in this material are those of the author(s) and do not necessarily reflect the views of the 
+                National Science Foundation.
+            </p>
+            <p class="footer-copyright">© 2026 USAGE Collaborations | In partnership with SCAR-INSTANT PSE</p>
+        </div>
+    </footer>
+
+</body>
+</html>
