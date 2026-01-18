@@ -178,18 +178,25 @@ img {
 
 /* --- HERO SECTION --- */
 .hero {
-    background: linear-gradient(rgba(0, 61, 92, 0.65), rgba(0, 119, 190, 0.5)), 
+    background: linear-gradient(rgba(0, 61, 92, 0.6), rgba(0, 119, 190, 0.45)), 
                 url('../images/TO_photo.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     color: white;
-    padding: var(--spacing-xl) var(--spacing-md);
+    padding: 6rem 2rem;
     text-align: center;
-    min-height: 700vh;
+    min-height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: 60vh;
+        padding: 4rem 1.5rem;
+    }
 }
 
 .hero-content {
