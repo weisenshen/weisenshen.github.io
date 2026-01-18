@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>USAge | US Antarctica/Arctic Geophysical Explorations</title>
+    <title>USAGE | US Antarctica/Arctic Geophysical Explorations</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
         /* --- VARIABLES --- */
         :root {
-            --primary-blue: #003366; /* Deep Academic Blue */
-            --accent-blue: #4da8da;   /* Lighter Ice Blue */
+            --primary-blue: #003366; 
+            --accent-blue: #4da8da;   
             --dark-gray: #333333;
             --light-gray: #f4f4f4;
             --white: #ffffff;
@@ -27,7 +27,6 @@
             color: var(--dark-gray); 
             background: var(--white); 
             line-height: 1.7; 
-            font-weight: 400;
         }
 
         h1, h2, h3, h4 { 
@@ -53,7 +52,7 @@
         .nav-container { 
             max-width: 1200px; 
             margin: 0 auto; 
-            height: 80px; 
+            height: 90px; /* Increased height slightly for bigger logo */
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
@@ -61,13 +60,14 @@
 
         .nav-logo { 
             font-family: 'Montserrat', sans-serif; 
-            font-weight: 800; 
-            font-size: 1.5rem; 
+            font-weight: 900; /* Extra Bold */
+            font-size: 2.4rem; /* Much Bigger */
             color: var(--primary-blue); 
-            letter-spacing: -0.5px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
-        .nav-links { display: flex; gap: 2.5rem; }
+        .nav-links { display: flex; gap: 2.5rem; align-items: center; }
         .nav-links a { 
             font-size: 0.9rem; 
             font-weight: 600; 
@@ -85,7 +85,6 @@
             display: flex; 
             align-items: center; 
             justify-content: center;
-            /* REPLACE THE URL BELOW WITH YOUR OWN IMAGE */
             background-image: linear-gradient(rgba(0, 51, 102, 0.6), rgba(0, 51, 102, 0.4)), url('https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?q=80&w=2070&auto=format&fit=crop'); 
             background-size: cover;
             background-position: center;
@@ -134,17 +133,9 @@
             cursor: pointer;
         }
 
-        .btn-primary { 
-            background: var(--white); 
-            color: var(--primary-blue); 
-        }
+        .btn-primary { background: var(--white); color: var(--primary-blue); }
         .btn-primary:hover { background: var(--light-gray); }
-
-        .btn-outline { 
-            border-color: var(--white); 
-            color: var(--white); 
-            margin-left: 1rem; 
-        }
+        .btn-outline { border-color: var(--white); color: var(--white); margin-left: 1rem; }
         .btn-outline:hover { background: rgba(255,255,255,0.1); }
 
         /* --- SECTIONS --- */
@@ -158,40 +149,17 @@
             margin-left: auto; 
             margin-right: auto;
         }
-        .section-header h2 { 
-            font-size: 2.5rem; 
-            margin-bottom: 1rem; 
-            text-transform: uppercase; 
-            letter-spacing: -0.5px; 
-        }
-        .section-header p { 
-            font-size: 1.1rem; 
-            color: #666; 
-        }
-        .section-line {
-            width: 60px;
-            height: 3px;
-            background: var(--accent-blue);
-            margin: 0 auto 1.5rem;
-        }
+        .section-header h2 { font-size: 2.5rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: -0.5px; }
+        .section-header p { font-size: 1.1rem; color: #666; }
+        .section-line { width: 60px; height: 3px; background: var(--accent-blue); margin: 0 auto 1.5rem; }
 
         /* --- ABOUT GRID --- */
-        .about-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 3rem; 
-        }
-        .about-item { text-align: left; }
+        .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; }
         .about-item h3 { font-size: 1.4rem; margin-bottom: 1rem; color: var(--dark-gray); }
         .about-item p { color: #555; font-size: 0.95rem; }
-        .about-icon { 
-            font-size: 2rem; 
-            margin-bottom: 1rem; 
-            color: var(--accent-blue); 
-            display: block; 
-        }
+        .about-icon { font-size: 2rem; margin-bottom: 1rem; color: var(--accent-blue); display: block; }
 
-        /* --- WORKSHOPS (Box Style) --- */
+        /* --- WORKSHOPS --- */
         .bg-gray { background-color: var(--light-gray); }
         
         .workshop-card { 
@@ -204,51 +172,57 @@
         }
         .workshop-card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
 
-        @media(min-width: 768px) {
-            .workshop-card { grid-template-columns: 250px 1fr; }
-        }
+        @media(min-width: 768px) { .workshop-card { grid-template-columns: 250px 1fr; } }
 
         .workshop-date { 
-            background: var(--primary-blue); 
-            color: white; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            justify-content: center; 
-            padding: 2rem; 
-            text-align: center;
+            background: var(--primary-blue); color: white; 
+            display: flex; flex-direction: column; align-items: center; justify-content: center; 
+            padding: 2rem; text-align: center;
         }
         .workshop-year { font-size: 2.5rem; font-weight: 800; line-height: 1; }
         .workshop-month { font-size: 1rem; text-transform: uppercase; margin-top: 0.5rem; opacity: 0.8; }
-
         .workshop-content { padding: 2.5rem; }
         .workshop-content h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
         .workshop-loc { color: var(--accent-blue); font-weight: 600; font-size: 0.9rem; margin-bottom: 1rem; display: block; }
         .workshop-link { 
-            display: inline-block; 
-            margin-top: 1.5rem; 
-            color: var(--primary-blue); 
-            font-weight: 700; 
-            border-bottom: 2px solid var(--accent-blue); 
-            padding-bottom: 2px;
+            display: inline-block; margin-top: 1.5rem; color: var(--primary-blue); font-weight: 700; 
+            border-bottom: 2px solid var(--accent-blue); padding-bottom: 2px;
         }
         .workshop-link:hover { color: var(--accent-blue); border-color: transparent; }
 
-        /* --- LEADERSHIP (Clean Circles) --- */
+        /* --- PARTNERS GRID --- */
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        .partner-card {
+            border: 1px solid var(--border-color);
+            padding: 2.5rem 1.5rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+        .partner-card:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .partner-icon { font-size: 2rem; margin-bottom: 1rem; opacity: 0.8; }
+        .partner-name { font-weight: 700; color: var(--primary-blue); margin-bottom: 0.5rem; }
+        .partner-link-text { font-size: 0.8rem; font-weight: 600; color: var(--accent-blue); text-transform: uppercase; letter-spacing: 1px; }
+
+        /* --- LEADERSHIP --- */
         .people-grid { display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; }
         .person { text-align: center; }
         .person-img { 
-            width: 150px; 
-            height: 150px; 
-            background: #ddd; 
-            border-radius: 50%; 
-            margin: 0 auto 1.5rem; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            font-size: 2rem; 
-            color: white;
-            background-color: var(--primary-blue);
+            width: 150px; height: 150px; background: #ddd; border-radius: 50%; 
+            margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; 
+            font-size: 2rem; color: white; background-color: var(--primary-blue);
         }
         .person-name { font-size: 1.2rem; margin-bottom: 0.25rem; }
         .person-role { font-size: 0.9rem; color: #666; text-transform: uppercase; letter-spacing: 1px; }
@@ -257,25 +231,23 @@
         .footer { background: #1a1a1a; color: #888; padding: 4rem 0; font-size: 0.9rem; }
         .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; }
         .footer-logo { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.5rem; color: white; margin-bottom: 0.5rem; display: block; }
-
+        
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .hero h1 { font-size: 2.5rem; }
         }
-        
-        /* Keyframe for fade in */
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-
     </style>
 </head>
 <body>
 
     <nav class="nav">
         <div class="nav-container">
-            <a href="#" class="nav-logo">USAge</a>
+            <a href="#" class="nav-logo">USAGE</a>
             <ul class="nav-links">
                 <li><a href="#about">Mission</a></li>
                 <li><a href="#workshops">Workshops</a></li>
+                <li><a href="#partners">Partners</a></li>
                 <li><a href="#leadership">Team</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -357,7 +329,43 @@
         </div>
     </section>
 
-    <section id="leadership" class="section">
+    <section id="partners" class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-line"></div>
+                <h2>Related Projects</h2>
+                <p>Collaborating with major NSF-funded initiatives and Antarctic research facilities.</p>
+            </div>
+            
+            <div class="partners-grid">
+                <a href="https://coldex.org/" target="_blank" class="partner-card">
+                    <div class="partner-icon">❄️</div>
+                    <div class="partner-name">COLDEX</div>
+                    <div class="partner-link-text">Visit Site &rarr;</div>
+                </a>
+                
+                <a href="https://www.rapidaccessicedrill.org/" target="_blank" class="partner-card">
+                    <div class="partner-icon">🔩</div>
+                    <div class="partner-name">RAID</div>
+                    <div class="partner-link-text">Visit Site &rarr;</div>
+                </a>
+
+                <a href="https://herculesdome.org/" target="_blank" class="partner-card">
+                    <div class="partner-icon">🏔️</div>
+                    <div class="partner-name">Hercules Dome</div>
+                    <div class="partner-link-text">Visit Site &rarr;</div>
+                </a>
+
+                <a href="https://icecube.wisc.edu/" target="_blank" class="partner-card">
+                    <div class="partner-icon">🧊</div>
+                    <div class="partner-name">IceCube Project</div>
+                    <div class="partner-link-text">Visit Site &rarr;</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="leadership" class="section bg-gray">
         <div class="container">
             <div class="section-header">
                 <div class="section-line"></div>
@@ -384,9 +392,9 @@
         </div>
     </section>
 
-    <section class="section" style="border-top: 1px solid #eee;">
+    <section class="section" style="border-top: 1px solid #eee; padding: 60px 0;">
         <div class="container" style="text-align: center;">
-            <p style="margin-bottom: 1.5rem; font-weight: 600; color: #999;">SUPPORTED BY</p>
+            <p style="margin-bottom: 1.5rem; font-weight: 600; color: #999; font-size: 0.8rem; letter-spacing: 2px;">FUNDING & SUPPORT</p>
             <div style="display: flex; justify-content: center; gap: 3rem; opacity: 0.6; flex-wrap: wrap;">
                 <span>NATIONAL SCIENCE FOUNDATION</span>
                 <span>SCAR-INSTANT</span>
@@ -398,7 +406,7 @@
     <footer class="footer" id="contact">
         <div class="container footer-content">
             <div>
-                <span class="footer-logo">USAge</span>
+                <span class="footer-logo">USAGE</span>
                 <p>US Antarctica/Arctic Geophysical Explorations</p>
             </div>
             <div>
