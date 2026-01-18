@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USAge | US Antarctica/Arctic Geophysical Explorations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --ice-white: #f8fafc; --glacier-blue: #1e3a5f; --deep-ocean: #0f2847; --aurora-teal: #2dd4bf; --arctic-sky: #38bdf8; --snow-gray: #e2e8f0; --rock-gray: #64748b; --text-primary: #1e293b; --text-secondary: #475569; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Source Sans 3', sans-serif; line-height: 1.6; color: var(--text-primary); background: var(--ice-white); }
+        .nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(15, 40, 71, 0.95); backdrop-filter: blur(10px); z-index: 1000; padding: 0 2rem; }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 70px; }
+        .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: white; }
+        .nav-logo-icon { width: 45px; height: 45px; background: linear-gradient(135deg, var(--aurora-teal), var(--arctic-sky)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem; color: var(--deep-ocean); }
+        .nav-logo-text { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: rgba(255,255,255,0.9); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--aurora-teal); }
+        .mobile-menu-btn { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+        .hero { min-height: 100vh; background: linear-gradient(135deg, var(--deep-ocean) 0%, var(--glacier-blue) 50%, #2a4a6f 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: 100px 2rem 60px; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 20% 80%, rgba(45,212,191,0.15) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(56,189,248,0.1) 0%, transparent 50%); }
+        .hero-content { max-width: 900px; text-align: center; position: relative; z-index: 1; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); padding: 8px 20px; border-radius: 50px; color: rgba(255,255,255,0.9); font-size: 0.9rem; margin-bottom: 2rem; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 6vw, 4.5rem); color: white; margin-bottom: 1.5rem; line-height: 1.1; }
+        .hero h1 span { background: linear-gradient(90deg, var(--aurora-teal), var(--arctic-sky)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero-subtitle { font-size: clamp(1rem, 2vw, 1.25rem); color: rgba(255,255,255,0.8); max-width: 700px; margin: 0 auto 2.5rem; line-height: 1.8; }
+        .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .btn { padding: 14px 32px; border-radius: 8px; font-weight: 600; font-size: 1rem; text-decoration: none; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px; }
+        .btn-primary { background: linear-gradient(135deg, var(--aurora-teal), #14b8a6); color: var(--deep-ocean); box-shadow: 0 4px 15px rgba(45,212,191,0.3); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(45,212,191,0.4); }
+        .btn-secondary { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.3); }
+        .btn-secondary:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.5); }
+        .section { padding: 100px 2rem; }
+        .section-header { text-align: center; max-width: 700px; margin: 0 auto 4rem; }
+        .section-tag { display: inline-block; color: var(--aurora-teal); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); color: var(--glacier-blue); margin-bottom: 1rem; }
+        .section-desc { color: var(--text-secondary); font-size: 1.1rem; }
+        .about { background: white; }
+        .about-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .about-card { background: var(--ice-white); border-radius: 16px; padding: 2.5rem; border: 1px solid var(--snow-gray); transition: all 0.3s ease; }
+        .about-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(30,58,95,0.1); }
+        .about-icon { width: 60px; height: 60px; background: linear-gradient(135deg, var(--glacier-blue), var(--deep-ocean)); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; font-size: 1.5rem; }
+        .about-card h3 { font-size: 1.3rem; color: var(--glacier-blue); margin-bottom: 1rem; }
+        .about-card p { color: var(--text-secondary); line-height: 1.7; }
+        .workshops { background: linear-gradient(180deg, var(--ice-white) 0%, white 100%); }
+        .workshops-container { max-width: 1000px; margin: 0 auto; }
+        .workshop-card { background: white; border-radius: 20px; overflow: hidden; margin-bottom: 2rem; box-shadow: 0 10px 40px rgba(30,58,95,0.08); border: 1px solid var(--snow-gray); }
+        .workshop-header { background: linear-gradient(135deg, var(--glacier-blue), var(--deep-ocean)); padding: 2rem 2.5rem; position: relative; }
+        .workshop-year { display: inline-block; background: var(--aurora-teal); color: var(--deep-ocean); padding: 6px 16px; border-radius: 50px; font-weight: 700; font-size: 0.9rem; margin-bottom: 1rem; }
+        .workshop-header h3 { color: white; font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 0.5rem; }
+        .workshop-meta { color: rgba(255,255,255,0.8); font-size: 0.95rem; display: flex; flex-wrap: wrap; gap: 1.5rem; }
+        .workshop-body { padding: 2rem 2.5rem; }
+        .workshop-body p { color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.7; }
+        .workshop-topics { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+        .topic-tag { background: var(--ice-white); color: var(--glacier-blue); padding: 6px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 500; border: 1px solid var(--snow-gray); }
+        .workshop-link { display: inline-flex; align-items: center; gap: 8px; color: var(--glacier-blue); font-weight: 600; text-decoration: none; }
+        .workshop-link:hover { color: var(--aurora-teal); }
+        .leadership { background: white; }
+        .leader-grid { max-width: 800px; margin: 0 auto; display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; }
+        .leader-card { text-align: center; }
+        .leader-avatar { width: 120px; height: 120px; background: linear-gradient(135deg, var(--glacier-blue), var(--deep-ocean)); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 2.5rem; font-weight: 600; }
+        .leader-card h3 { color: var(--glacier-blue); margin-bottom: 0.25rem; }
+        .leader-card .affiliation { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 0.5rem; }
+        .leader-card a { color: var(--aurora-teal); font-size: 0.9rem; text-decoration: none; }
+        .affiliations { background: var(--deep-ocean); color: white; }
+        .affiliations .section-tag { color: var(--aurora-teal); }
+        .affiliations .section-title { color: white; }
+        .affiliations .section-desc { color: rgba(255,255,255,0.7); }
+        .logos-grid { max-width: 900px; margin: 0 auto; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 3rem; }
+        .logo-item { display: flex; flex-direction: column; align-items: center; gap: 1rem; opacity: 0.8; transition: opacity 0.3s; }
+        .logo-item:hover { opacity: 1; }
+        .logo-placeholder { width: 100px; height: 100px; background: rgba(255,255,255,0.1); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.8rem; text-align: center; padding: 1rem; border: 1px solid rgba(255,255,255,0.1); }
+        .logo-item span { font-size: 0.9rem; color: rgba(255,255,255,0.7); text-align: center; }
+        .nsf-badge { background: rgba(45,212,191,0.15); border: 1px solid var(--aurora-teal); padding: 1.5rem 2rem; border-radius: 12px; max-width: 600px; margin: 3rem auto 0; text-align: center; }
+        .nsf-badge p { color: rgba(255,255,255,0.9); font-size: 0.95rem; margin-bottom: 0.5rem; }
+        .nsf-badge a { color: var(--aurora-teal); text-decoration: none; font-weight: 600; }
+        .contact { background: var(--ice-white); }
+        .contact-container { max-width: 800px; margin: 0 auto; text-align: center; }
+        .contact-info { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-top: 2rem; }
+        .contact-item { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+        .contact-item-icon { width: 50px; height: 50px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--glacier-blue); font-size: 1.2rem; margin-bottom: 0.5rem; box-shadow: 0 4px 15px rgba(30,58,95,0.1); }
+        .contact-item a { color: var(--glacier-blue); text-decoration: none; font-weight: 500; }
+        .footer { background: var(--glacier-blue); color: white; padding: 3rem 2rem; }
+        .footer-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+        .footer-logo { display: flex; align-items: center; gap: 10px; }
+        .footer-logo-icon { width: 35px; height: 35px; background: linear-gradient(135deg, var(--aurora-teal), var(--arctic-sky)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; color: var(--deep-ocean); }
+        .footer-text { font-family: 'Playfair Display', serif; font-size: 1.2rem; }
+        .footer-links { display: flex; gap: 2rem; }
+        .footer-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; }
+        .footer-links a:hover { color: var(--aurora-teal); }
+        .footer-copy { color: rgba(255,255,255,0.6); font-size: 0.85rem; }
+        @media (max-width: 768px) {
+            .nav-links { display: none; position: absolute; top: 70px; left: 0; right: 0; background: var(--deep-ocean); flex-direction: column; padding: 1rem 2rem; gap: 1rem; }
+            .nav-links.active { display: flex; }
+            .mobile-menu-btn { display: block; }
+            .hero { padding: 120px 1.5rem 60px; }
+            .section { padding: 60px 1.5rem; }
+            .workshop-header, .workshop-body { padding: 1.5rem; }
+            .footer-container { flex-direction: column; text-align: center; }
+            .leader-grid { gap: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo"><div class="nav-logo-icon">US</div><span class="nav-logo-text">USAge</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#workshops">Workshops</a></li>
+                <li><a href="#leadership">Leadership</a></li>
+                <li><a href="#affiliations">Support</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="document.getElementById('navLinks').classList.toggle('active')">☰</button>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">SCAR-INSTANT Probing the Solid Earth and its Interactions</div>
+            <h1>US Antarctica / Arctic<br><span>Geophysical Explorations</span></h1>
+            <p class="hero-subtitle">Coordinating workshops and activities of the US polar geophysics community. Serving as a permanent archive of past workshops and a coordination point for future community activities and collaborative research projects.</p>
+            <div class="hero-buttons">
+                <a href="#workshops" class="btn btn-primary">View Workshops →</a>
+                <a href="#about" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section about" id="about">
+        <div class="section-header">
+            <span class="section-tag">About USAge</span>
+            <h2 class="section-title">Advancing Polar Geophysics Research</h2>
+            <p class="section-desc">USAge brings together researchers, institutions, and national programs to address fundamental questions about Earth's polar regions.</p>
+        </div>
+        <div class="about-grid">
+            <div class="about-card"><div class="about-icon">🌍</div><h3>Observational Networks</h3><p>Coordinating GNSS, seismic, and geodetic networks across Antarctica to monitor crustal deformation, ice sheet dynamics, and glacial isostatic adjustment.</p></div>
+            <div class="about-card"><div class="about-icon">🔬</div><h3>Interdisciplinary Research</h3><p>Integrating seismology, geodesy, glaciology, and geodynamics to understand the complex interactions between ice sheets and the solid Earth.</p></div>
+            <div class="about-card"><div class="about-icon">🤝</div><h3>International Collaboration</h3><p>Working with SCAR-INSTANT and international partners to coordinate large-scale science programs and share resources across national Antarctic programs.</p></div>
+            <div class="about-card"><div class="about-icon">📊</div><h3>Data Synthesis</h3><p>Advancing methods for processing and interpreting polar geophysical data, including GIA modeling, seismic tomography, and ice-Earth interactions.</p></div>
+            <div class="about-card"><div class="about-icon">🎓</div><h3>Community Building</h3><p>Training the next generation of polar scientists through workshops, mentorship programs, and collaborative research opportunities.</p></div>
+            <div class="about-card"><div class="about-icon">🏔️</div><h3>Infrastructure & Logistics</h3><p>Addressing challenges in maintaining and expanding geophysical observatories in the world's most remote and challenging environments.</p></div>
+        </div>
+    </section>
+
+    <section class="section workshops" id="workshops">
+        <div class="section-header">
+            <span class="section-tag">Past Events</span>
+            <h2 class="section-title">Community Workshops</h2>
+            <p class="section-desc">Archive of workshops bringing together the polar geophysics community to discuss science priorities, challenges, and future directions.</p>
+        </div>
+        <div class="workshops-container">
+            <div class="workshop-card">
+                <div class="workshop-header">
+                    <span class="workshop-year">2024</span>
+                    <h3>INSTANT II Follow-on Workshop on the Future of Geodetic-Geophysical Observational Networks in Antarctica</h3>
+                    <div class="workshop-meta"><span>📅 September 28, 2024</span><span>📍 Washington Dulles Marriott Suites, Herndon, VA</span></div>
+                </div>
+                <div class="workshop-body">
+                    <p>A follow-on workshop focused on past accomplishments and building a sustainable community strategy. Sessions covered international partnerships, recent US field projects (ITGC, POLENET, South Pole DAS array), NSF future planning, and lessons from other community-driven projects.</p>
+                    <div class="workshop-topics">
+                        <span class="topic-tag">International Partnerships</span><span class="topic-tag">Field Projects</span><span class="topic-tag">NSF Planning</span><span class="topic-tag">Community Strategy</span>
+                    </div>
+                    <a href="workshops/2024-dc-workshop.html" class="workshop-link">View Program →</a>
+                </div>
+            </div>
+            <div class="workshop-card">
+                <div class="workshop-header">
+                    <span class="workshop-year">2022</span>
+                    <h3>The Future of Geodetic-Geophysical Observational Networks in Antarctica</h3>
+                    <div class="workshop-meta"><span>📅 September 29 – October 1, 2022</span><span>📍 Colorado State University, Fort Collins, CO</span></div>
+                </div>
+                <div class="workshop-body">
+                    <p>A comprehensive workshop featuring six scientific sessions covering observational networks, GNSS applications, seismology, data synthesis, GIA and broader implications, and infrastructure coordination.</p>
+                    <div class="workshop-topics">
+                        <span class="topic-tag">GNSS Networks</span><span class="topic-tag">Seismology</span><span class="topic-tag">GIA Modeling</span><span class="topic-tag">POLENET/ANET</span><span class="topic-tag">Data Synthesis</span>
+                    </div>
+                    <a href="workshops/2022-fort-collins-workshop.html" class="workshop-link">View Program & Abstracts →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section leadership" id="leadership">
+        <div class="section-header">
+            <span class="section-tag">Leadership</span>
+            <h2 class="section-title">SCAR-INSTANT PSE Leadership</h2>
+            <p class="section-desc">USAge activities are coordinated by the leadership team of SCAR-INSTANT Subcommittee 2: Probing the Solid Earth and its Interactions (PSE).</p>
+        </div>
+        <div class="leader-grid">
+            <div class="leader-card">
+                <div class="leader-avatar">MS</div>
+                <h3>Mirko Scheinert</h3>
+                <p class="affiliation">Technische Universität Dresden, Germany</p>
+                <a href="mailto:mirko.scheinert@tu-dresden.de">mirko.scheinert@tu-dresden.de</a>
+            </div>
+            <div class="leader-card">
+                <div class="leader-avatar">WS</div>
+                <h3>Weisen Shen</h3>
+                <p class="affiliation">Stony Brook University, New York, USA</p>
+                <a href="mailto:Weisen.Shen@stonybrook.edu">Weisen.Shen@stonybrook.edu</a>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="https://www.scar-instant.org/index.php/research-themes/theme-2-solid-earth-ice-interactions/sc2-probing-the-solid-earth-and-its-interactions" target="_blank" class="btn btn-secondary" style="border-color: var(--glacier-blue); color: var(--glacier-blue);">Visit SCAR-INSTANT PSE →</a>
+        </div>
+    </section>
+
+    <section class="section affiliations" id="affiliations">
+        <div class="section-header">
+            <span class="section-tag">Our Partners</span>
+            <h2 class="section-title">Affiliations & Support</h2>
+            <p class="section-desc">USAge activities are supported by and aligned with major scientific organizations and funding agencies.</p>
+        </div>
+        <div class="logos-grid">
+            <div class="logo-item"><div class="logo-placeholder">SCAR</div><span>Scientific Committee on Antarctic Research</span></div>
+            <div class="logo-item"><div class="logo-placeholder">NSF</div><span>National Science Foundation</span></div>
+            <div class="logo-item"><div class="logo-placeholder">INSTANT</div><span>SCAR-INSTANT Program</span></div>
+            <div class="logo-item"><div class="logo-placeholder">EarthScope</div><span>EarthScope Consortium</span></div>
+        </div>
+        <div class="nsf-badge">
+            <p>This material is based upon work supported by the National Science Foundation.</p>
+            <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2235061" target="_blank">NSF Award #2235061 →</a>
+        </div>
+    </section>
+
+    <section class="section contact" id="contact">
+        <div class="contact-container">
+            <div class="section-header">
+                <span class="section-tag">Get Involved</span>
+                <h2 class="section-title">Join Our Community</h2>
+                <p class="section-desc">Interested in polar geophysics research? Connect with us to learn about upcoming workshops and community activities.</p>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item"><div class="contact-item-icon">📧</div><strong>Email</strong><a href="mailto:Weisen.Shen@stonybrook.edu">Weisen.Shen@stonybrook.edu</a></div>
+                <div class="contact-item"><div class="contact-item-icon">🌐</div><strong>Website</strong><a href="http://usage-polar.org">usage-polar.org</a></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo"><div class="footer-logo-icon">US</div><span class="footer-text">USAge</span></div>
+            <div class="footer-links"><a href="#about">About</a><a href="#workshops">Workshops</a><a href="#leadership">Leadership</a><a href="#contact">Contact</a></div>
+            <p class="footer-copy">© 2024 USAge. Supported by NSF and SCAR.</p>
+        </div>
+    </footer>
+</body>
+</html>
