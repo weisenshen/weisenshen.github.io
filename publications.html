@@ -3,70 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publications | USAge</title>
+    <title>Publications | USAGE</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&family=Crimson+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <nav class="nav">
+    <!-- Navigation -->
+    <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <img src="images/logo.svg" alt="USAge Collaborations">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">❄</div>
+                <div class="logo-text">
+                    <span class="logo-main">USAGE</span>
+                    <span class="logo-sub">Collaborations</span>
+                </div>
             </a>
             
-            <div class="nav-links">
-                <a href="index.html#mission">Mission</a>
-                <a href="workshops.html">Workshops</a>
-                <a href="news.html">News</a>
-                <a href="team.html">Team</a>
-                <a href="publications.html">Publications</a>
-                <a href="index.html#contact">Contact</a>
-            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="workshops.html">Workshops</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="publications.html">Publications</a></li>
+            </ul>
         </div>
     </nav>
 
+    <!-- Page Header -->
     <div class="page-header">
         <h1>Publications & Resources</h1>
         <p>Workshop reports, white papers, and community publications</p>
     </div>
 
+    <!-- Page Content -->
     <div class="page-content">
         
         <div style="max-width: 900px; margin: 0 auto;">
             
             <section class="mb-3">
-                <h2 class="section-title">Workshop Reports</h2>
+                <h2 class="section-heading">Workshop Reports</h2>
                 
-                <div class="workshop-item">
+                <div class="feature-card" style="margin-bottom: 2rem;">
                     <div style="display: flex; align-items: start; gap: 2rem;">
                         <div style="flex: 1;">
                             <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">INSTANT II Follow-on Workshop Report</h3>
-                            <p style="color: var(--accent-blue); font-weight: 700; font-size: 0.85rem; margin-bottom: 1rem;">September 2024 • Herndon, VA</p>
-                            <p style="color: #666; line-height: 1.7; margin-bottom: 1rem;">
+                            <p style="color: var(--secondary-color); font-weight: 700; font-size: 0.85rem; margin-bottom: 1rem;">September 2024 • Herndon, VA</p>
+                            <p style="color: var(--text-light); line-height: 1.7; margin-bottom: 1rem;">
                                 Summary report from the September 2024 workshop on the future of geodetic-geophysical observational networks. Includes recommendations for network design, data management, and community coordination.
                             </p>
-                            <a href="#" class="btn btn-outline" style="display: inline-block;">Download Report (Coming Soon)</a>
+                            <a href="#" class="btn btn-outline-small">Download Report (Coming Soon)</a>
                         </div>
-                        <div style="background: var(--light-gray); padding: 1rem; border-radius: 3px; min-width: 100px; text-align: center;">
+                        <div style="background: var(--bg-light); padding: 1rem; border-radius: 3px; min-width: 100px; text-align: center;">
                             <div style="font-size: 2rem; margin-bottom: 0.5rem;">📄</div>
                             <div style="font-size: 0.8rem; color: #666;">PDF</div>
                         </div>
                     </div>
                 </div>
 
-                <div class="workshop-item">
+                <div class="feature-card" style="margin-bottom: 2rem;">
                     <div style="display: flex; align-items: start; gap: 2rem;">
                         <div style="flex: 1;">
                             <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">The Future of Observational Networks in Polar Regions</h3>
-                            <p style="color: var(--accent-blue); font-weight: 700; font-size: 0.85rem; margin-bottom: 1rem;">October 2022 • Fort Collins, CO</p>
-                            <p style="color: #666; line-height: 1.7; margin-bottom: 1rem;">
+                            <p style="color: var(--secondary-color); font-weight: 700; font-size: 0.85rem; margin-bottom: 1rem;">October 2022 • Fort Collins, CO</p>
+                            <p style="color: var(--text-light); line-height: 1.7; margin-bottom: 1rem;">
                                 Comprehensive workshop report establishing the SCAR-INSTANT PSE theme priorities. Includes detailed discussion of grand challenges, network design recommendations, and international collaboration frameworks.
                             </p>
-                            <a href="#" class="btn btn-outline" style="display: inline-block;">Download Report (Coming Soon)</a>
+                            <a href="#" class="btn btn-outline-small">Download Report (Coming Soon)</a>
                         </div>
-                        <div style="background: var(--light-gray); padding: 1rem; border-radius: 3px; min-width: 100px; text-align: center;">
+                        <div style="background: var(--bg-light); padding: 1rem; border-radius: 3px; min-width: 100px; text-align: center;">
                             <div style="font-size: 2rem; margin-bottom: 0.5rem;">📄</div>
                             <div style="font-size: 0.8rem; color: #666;">PDF</div>
                         </div>
@@ -75,90 +82,90 @@
             </section>
 
             <section class="mt-3 mb-3">
-                <h2 class="section-title">White Papers & Community Documents</h2>
+                <h2 class="section-heading">White Papers & Community Documents</h2>
                 
-                <div class="news-item" style="border: 1px solid var(--border-color); padding: 1.5rem; margin-bottom: 1.5rem; border-radius: 3px;">
+                <div class="news-card" style="margin-bottom: 1.5rem;">
                     <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">SCAR-INSTANT PSE Science Plan</h3>
-                    <p style="color: #666; line-height: 1.7; margin-bottom: 0.8rem;">
+                    <p style="color: var(--text-light); line-height: 1.7; margin-bottom: 0.8rem;">
                         Strategic science plan for the Probing the Solid Earth theme within SCAR-INSTANT, outlining key research questions and observational priorities for 2023-2030.
                     </p>
-                    <a href="https://www.scar-instant.org/" target="_blank" class="news-link">View on SCAR-INSTANT Website →</a>
+                    <a href="https://www.scar-instant.org/" target="_blank" class="card-link">View on SCAR-INSTANT Website →</a>
                 </div>
 
-                <div class="news-item" style="border: 1px solid var(--border-color); padding: 1.5rem; margin-bottom: 1.5rem; border-radius: 3px;">
+                <div class="news-card" style="margin-bottom: 1.5rem;">
                     <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Community Priorities Document</h3>
-                    <p style="color: #666; line-height: 1.7; margin-bottom: 0.8rem;">
+                    <p style="color: var(--text-light); line-height: 1.7; margin-bottom: 0.8rem;">
                         Consensus document from the 2022 Fort Collins workshop identifying the highest priority scientific questions for US polar geophysics over the next decade.
                     </p>
-                    <a href="#" class="news-link">Download (Coming Soon) →</a>
+                    <a href="#" class="card-link">Download (Coming Soon) →</a>
                 </div>
             </section>
 
             <section class="mt-3 mb-3">
-                <h2 class="section-title">Related Publications</h2>
-                <p class="intro-text">
-                    Selected publications from community members relevant to USAge themes and priorities:
+                <h2 class="section-heading">Related Publications</h2>
+                <p class="section-intro">
+                    Selected publications from community members relevant to USAGE themes and priorities:
                 </p>
 
-                <div style="background: var(--light-gray); padding: 2rem; border-left: 4px solid var(--accent-blue); margin-bottom: 1.5rem;">
+                <div class="section section-light" style="padding: 2rem; margin-bottom: 1.5rem; border-radius: 8px;">
                     <p style="font-size: 0.95rem; line-height: 1.8; color: #666;">
                         <strong>Author, A., Author, B., et al.</strong> (Year). Title of paper related to polar geophysics. 
                         <em>Journal Name</em>, Volume(Issue), pages. 
-                        <a href="#" style="color: var(--accent-blue);">DOI: 10.xxxx/xxxxx</a>
+                        <a href="#" style="color: var(--secondary-color);">DOI: 10.xxxx/xxxxx</a>
                     </p>
                 </div>
 
-                <div style="background: var(--light-gray); padding: 2rem; border-left: 4px solid var(--accent-blue); margin-bottom: 1.5rem;">
+                <div class="section section-light" style="padding: 2rem; margin-bottom: 1.5rem; border-radius: 8px;">
                     <p style="font-size: 0.95rem; line-height: 1.8; color: #666;">
                         <strong>Author, C., Author, D., et al.</strong> (Year). Another important paper on Antarctic seismology. 
                         <em>Journal Name</em>, Volume(Issue), pages. 
-                        <a href="#" style="color: var(--accent-blue);">DOI: 10.xxxx/xxxxx</a>
+                        <a href="#" style="color: var(--secondary-color);">DOI: 10.xxxx/xxxxx</a>
                     </p>
                 </div>
 
-                <div style="background: var(--light-gray); padding: 2rem; border-left: 4px solid var(--accent-blue); margin-bottom: 1.5rem;">
+                <div class="section section-light" style="padding: 2rem; margin-bottom: 1.5rem; border-radius: 8px;">
                     <p style="font-size: 0.95rem; line-height: 1.8; color: #666;">
                         <strong>Author, E., Author, F., et al.</strong> (Year). Paper on geodetic observations in polar regions. 
                         <em>Journal Name</em>, Volume(Issue), pages. 
-                        <a href="#" style="color: var(--accent-blue);">DOI: 10.xxxx/xxxxx</a>
+                        <a href="#" style="color: var(--secondary-color);">DOI: 10.xxxx/xxxxx</a>
                     </p>
                 </div>
 
                 <p style="font-style: italic; color: #666; margin-top: 2rem;">
-                    If you have publications relevant to USAge themes that you'd like listed here, please <a href="/cdn-cgi/l/email-protection#88dfede1fbede6a6dbe0ede6c8fbfce7e6f1eafae7e7e3a6edecfd" style="color: var(--accent-blue);">contact the coordinators</a>.
+                    If you have publications relevant to USAGE themes that you'd like listed here, please <a href="mailto:Weisen.Shen@stonybrook.edu" style="color: var(--secondary-color);">contact the coordinators</a>.
                 </p>
             </section>
 
             <section class="mt-3 mb-3">
-                <h2 class="section-title">Data & Resources</h2>
+                <h2 class="section-heading">Data & Resources</h2>
                 
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
                     
-                    <div style="border: 1px solid var(--border-color); padding: 2rem; border-radius: 3px; text-align: center;">
+                    <div class="feature-card" style="text-align: center;">
                         <div style="font-size: 3rem; margin-bottom: 1rem;">🗄️</div>
                         <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">IRIS DMC</h3>
-                        <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">
+                        <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">
                             Access seismic data from polar networks through the IRIS Data Management Center
                         </p>
-                        <a href="https://ds.iris.edu/" target="_blank" class="news-link">Visit IRIS →</a>
+                        <a href="https://ds.iris.edu/" target="_blank" class="card-link">Visit IRIS →</a>
                     </div>
 
-                    <div style="border: 1px solid var(--border-color); padding: 2rem; border-radius: 3px; text-align: center;">
+                    <div class="feature-card" style="text-align: center;">
                         <div style="font-size: 3rem; margin-bottom: 1rem;">🌐</div>
                         <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">UNAVCO</h3>
-                        <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">
+                        <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">
                             Geodetic data and resources from polar GPS/GNSS networks
                         </p>
-                        <a href="https://www.unavco.org/" target="_blank" class="news-link">Visit UNAVCO →</a>
+                        <a href="https://www.unavco.org/" target="_blank" class="card-link">Visit UNAVCO →</a>
                     </div>
 
-                    <div style="border: 1px solid var(--border-color); padding: 2rem; border-radius: 3px; text-align: center;">
+                    <div class="feature-card" style="text-align: center;">
                         <div style="font-size: 3rem; margin-bottom: 1rem;">❄️</div>
                         <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">USAP Data</h3>
-                        <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">
+                        <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">
                             US Antarctic Program Data Center for polar research data
                         </p>
-                        <a href="https://www.usap-dc.org/" target="_blank" class="news-link">Visit USAP-DC →</a>
+                        <a href="https://www.usap-dc.org/" target="_blank" class="card-link">Visit USAP-DC →</a>
                     </div>
 
                 </div>
@@ -168,16 +175,30 @@
 
     </div>
 
+    <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
+        <div class="footer-container">
             <div class="footer-section">
-                <h2 style="color:white; margin-bottom:0.5rem;">USAge Collaborations</h2>
-                <p style="opacity:0.8; margin-bottom: 1rem;">US Antarctica / Arctic Geophysical Explorations</p>
-                <p style="font-size: 0.9rem; opacity: 0.7; line-height: 1.6;">
-                    This material is based upon work supported by the National Science Foundation under grant number <strong>OPP-2235061</strong>. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
+                <h3>USAGE Collaborations</h3>
+                <p>US Antarctica / Arctic Geophysical Explorations</p>
+                <p class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="workshops.html">Workshops</a>
+                    <a href="news.html">News</a>
+                    <a href="team.html">Team</a>
+                    <a href="publications.html">Publications</a>
                 </p>
             </div>
-            <div class="footer-section" style="text-align: right;">
-                <h3 style="color:white; margin-bottom: 1rem; font-size: 1.1rem;">Contact</h3>
-                <p><a href="/cdn-cgi/l/email-protection#81d6e4e8f2e4efafd2e9e4efc1f2f5eeeff8e3f3eeeeeaafe4e5f4" style="color:white; text-decoration: underline;"><span class="__cf_email__" data-cfemail="eabd8f83998f84c4b9828f84aa999e8584938898858581c48f8e9f">[email&#160;protected]</span></a></p>
-                <p style="margin-top: 1.5rem; opacity: 0.7; font-size: 0.85rem;"
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><a href="mailto:Weisen.Shen@stonybrook.edu">Weisen.Shen@stonybrook.edu</a></p>
+            </div>
+        </div>
+        <div class="footer-disclaimer">
+            <p>This material is based upon work supported by the National Science Foundation under grant number <strong>OPP-2235061</strong>. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.</p>
+            <p class="footer-copyright">© 2026 USAGE Collaborations | In partnership with SCAR-INSTANT PSE</p>
+        </div>
+    </footer>
+
+</body>
+</html>

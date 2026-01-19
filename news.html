@@ -3,43 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News & Updates | USAge</title>
+    <title>News & Updates | USAGE</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&family=Crimson+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <nav class="nav">
+    <!-- Navigation -->
+    <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <img src="images/logo.svg" alt="USAge Collaborations">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">❄</div>
+                <div class="logo-text">
+                    <span class="logo-main">USAGE</span>
+                    <span class="logo-sub">Collaborations</span>
+                </div>
             </a>
             
-            <div class="nav-links">
-                <a href="index.html#mission">Mission</a>
-                <a href="workshops.html">Workshops</a>
-                <a href="news.html">News</a>
-                <a href="team.html">Team</a>
-                <a href="publications.html">Publications</a>
-                <a href="index.html#contact">Contact</a>
-            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="workshops.html">Workshops</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="publications.html">Publications</a></li>
+            </ul>
         </div>
     </nav>
 
+    <!-- Page Header -->
     <div class="page-header">
         <h1>News & Updates</h1>
-        <p>Latest developments from the USAge community</p>
+        <p>Latest developments from the USAGE community</p>
     </div>
 
+    <!-- Page Content -->
     <div class="page-content">
         
         <div style="max-width: 900px; margin: 0 auto;">
             
-            <article class="news-item" style="border: 1px solid var(--border-color); padding: 2rem; margin-bottom: 2rem; border-radius: 3px;">
+            <article class="news-card" style="margin-bottom: 2rem;">
                 <div class="news-date">JANUARY 2026</div>
                 <h2>Planning Underway for 2026 Workshop</h2>
-                <p>The USAge organizing committee is currently in the planning stages for our next community workshop, tentatively scheduled for late 2026. We are working to identify an optimal location and timing that will maximize community participation.</p>
+                <p>The USAGE organizing committee is currently in the planning stages for our next community workshop, tentatively scheduled for late 2026. We are working to identify an optimal location and timing that will maximize community participation.</p>
                 
                 <p>Topics under consideration for the workshop include:</p>
                 <ul style="margin: 1rem 0 1rem 2rem; line-height: 1.8;">
@@ -51,13 +58,9 @@
                 </ul>
                 
                 <p><strong>Stay tuned for announcements</strong> about dates, location, and registration. Join our mailing list to receive updates as soon as they're available.</p>
-                
-                <div style="margin-top: 1.5rem;">
-                    <a href="index.html#get-involved" class="btn btn-primary">Join Mailing List</a>
-                </div>
             </article>
 
-            <article class="news-item" style="border: 1px solid var(--border-color); padding: 2rem; margin-bottom: 2rem; border-radius: 3px;">
+            <article class="news-card" style="margin-bottom: 2rem;">
                 <div class="news-date">OCTOBER 2024</div>
                 <h2>Workshop Materials Now Available</h2>
                 <p>Presentations and reports from the September 2024 Herndon workshop are now being compiled and will be made available to the community. Participants discussed the future of POLENET, data management strategies, and integration with major projects like ITGC.</p>
@@ -65,11 +68,11 @@
                 <p>Key outcomes from the workshop include prioritized recommendations for observational network expansion and enhanced coordination mechanisms for the US polar geophysics community.</p>
                 
                 <div style="margin-top: 1.5rem;">
-                    <a href="workshops/2024-herndon.html" class="btn btn-outline">View Workshop Details</a>
+                    <a href="workshops/2024-herndon.html" class="btn btn-outline-small">View Workshop Details</a>
                 </div>
             </article>
 
-            <article class="news-item" style="border: 1px solid var(--border-color); padding: 2rem; margin-bottom: 2rem; border-radius: 3px;">
+            <article class="news-card" style="margin-bottom: 2rem;">
                 <div class="news-date">SEPTEMBER 2024</div>
                 <h2>Successful Herndon Workshop Concludes</h2>
                 <p>Over 40 participants from across the United States gathered in Herndon, Virginia for the INSTANT II Follow-on Workshop from September 16-18, 2024. The three-day workshop featured presentations, breakout sessions, and collaborative discussions on the future of polar geophysical observational networks.</p>
@@ -79,7 +82,7 @@
                 <p><em>"This workshop was essential for bringing our community together and charting a path forward for the next decade of polar geophysics research,"</em> noted one of the organizers.</p>
             </article>
 
-            <article class="news-item" style="border: 1px solid var(--border-color); padding: 2rem; margin-bottom: 2rem; border-radius: 3px;">
+            <article class="news-card" style="margin-bottom: 2rem;">
                 <div class="news-date">JUNE 2024</div>
                 <h2>NSF Grant Supports Community Coordination</h2>
                 <p>The National Science Foundation has awarded funding (OPP-2235061) to support community coordination activities for US polar geophysics research. This grant enables the organization of workshops, maintenance of this website, and coordination with international partners through SCAR-INSTANT.</p>
@@ -87,7 +90,7 @@
                 <p>The funding recognizes the importance of community-driven science planning and the need for sustained coordination to address grand challenges in polar geophysics.</p>
             </article>
 
-            <article class="news-item" style="border: 1px solid var(--border-color); padding: 2rem; margin-bottom: 2rem; border-radius: 3px;">
+            <article class="news-card" style="margin-bottom: 2rem;">
                 <div class="news-date">NOVEMBER 2022</div>
                 <h2>Fort Collins Workshop Report Released</h2>
                 <p>The comprehensive report from our October 2022 workshop "The Future of Observational Networks in Polar Regions" has been completed and distributed to the community. The report synthesizes discussions on grand challenges, network design, and international collaboration frameworks.</p>
@@ -95,7 +98,7 @@
                 <p>This foundational document established key priorities for the SCAR-INSTANT Probing the Solid Earth (PSE) theme and has informed planning for future community activities.</p>
                 
                 <div style="margin-top: 1.5rem;">
-                    <a href="workshops/2022-fortcollins.html" class="btn btn-outline">View Workshop Details</a>
+                    <a href="workshops/2022-fortcollins.html" class="btn btn-outline-small">View Workshop Details</a>
                 </div>
             </article>
 
@@ -103,17 +106,30 @@
 
     </div>
 
+    <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
+        <div class="footer-container">
             <div class="footer-section">
-                <h2 style="color:white; margin-bottom:0.5rem;">USAge Collaborations</h2>
-                <p style="opacity:0.8; margin-bottom: 1rem;">US Antarctica / Arctic Geophysical Explorations</p>
-                <p style="font-size: 0.9rem; opacity: 0.7; line-height: 1.6;">
-                    This material is based upon work supported by the National Science Foundation under grant number <strong>OPP-2235061</strong>. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
+                <h3>USAGE Collaborations</h3>
+                <p>US Antarctica / Arctic Geophysical Explorations</p>
+                <p class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="workshops.html">Workshops</a>
+                    <a href="news.html">News</a>
+                    <a href="team.html">Team</a>
+                    <a href="publications.html">Publications</a>
                 </p>
             </div>
-            <div class="footer-section" style="text-align: right;">
-                <h3 style="color:white; margin-bottom: 1rem; font-size: 1.1rem;">Contact</h3>
-                <p><a href="/cdn-cgi/l/email-protection#5601333f25333878053e333816252239382f342439393d78333223" style="color:white; text-decoration: underline;"><span class="__cf_email__" data-cfemail="85d2e0ecf6e0ebabd6ede0ebc5f6f1eaebfce7f7eaeaeeabe0e1f0">[email&#160;protected]</span></a></p>
-                <p style="margin-top: 1.5rem; opacity: 0.7; font-size: 0.85rem;">
-                    © 2026 USAge Collaboration
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><a href="mailto:Weisen.Shen@stonybrook.edu">Weisen.Shen@stonybrook.edu</a></p>
+            </div>
+        </div>
+        <div class="footer-disclaimer">
+            <p>This material is based upon work supported by the National Science Foundation under grant number <strong>OPP-2235061</strong>. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.</p>
+            <p class="footer-copyright">© 2026 USAGE Collaborations | In partnership with SCAR-INSTANT PSE</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -3,118 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workshops | USAge</title>
+    <title>Workshops | USAGE</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&family=Crimson+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <nav class="nav">
+    <!-- Navigation -->
+    <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <img src="images/logo.svg" alt="USAge Collaborations">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">❄</div>
+                <div class="logo-text">
+                    <span class="logo-main">USAGE</span>
+                    <span class="logo-sub">Collaborations</span>
+                </div>
             </a>
             
-            <div class="nav-links">
-                <a href="index.html#mission">Mission</a>
-                <a href="workshops.html">Workshops</a>
-                <a href="news.html">News</a>
-                <a href="team.html">Team</a>
-                <a href="publications.html">Publications</a>
-                <a href="index.html#contact">Contact</a>
-            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="workshops.html">Workshops</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="publications.html">Publications</a></li>
+            </ul>
         </div>
     </nav>
 
+    <!-- Page Header -->
     <div class="page-header">
         <h1>Workshop Archive</h1>
-        <p>Past and upcoming workshops coordinated by the USAge community</p>
+        <p>Past and upcoming workshops coordinated by the USAGE community</p>
     </div>
 
+    <!-- Page Content -->
     <div class="page-content">
         
         <section class="mb-3">
-            <h2 class="section-title">Upcoming Workshops</h2>
-            <div class="workshop-item">
-                <span class="ws-meta">TBD 2026 • LOCATION TBD</span>
-                <h3 class="ws-title">Future Workshop in Planning</h3>
-                <p>Details coming soon. Stay tuned for announcements about dates, location, and registration. Join our mailing list to receive updates.</p>
-                <br>
-                <a href="index.html#get-involved" class="ws-link">JOIN MAILING LIST →</a>
+            <h2 class="section-heading">Upcoming Workshops</h2>
+            
+            <div class="workshop-card" style="background: var(--bg-light);">
+                <div class="workshop-header">
+                    <div class="workshop-date">TBD 2026 • Location TBD</div>
+                    <h3>Future Workshop in Planning</h3>
+                    <p>Details coming soon. Stay tuned for announcements about dates, location, and registration. Join our mailing list to receive updates.</p>
+                </div>
+                <a href="index.html#about" class="btn btn-outline-small">Join Mailing List</a>
             </div>
         </section>
 
         <section class="mt-3">
-            <h2 class="section-title">Past Workshops</h2>
+            <h2 class="section-heading">Past Workshops</h2>
             
-            <div class="workshop-item">
-                <span class="ws-meta">SEPTEMBER 2024 • HERNDON, VA</span>
-                <h3 class="ws-title">INSTANT II Follow-on Workshop</h3>
-                <p>This workshop brought together the US polar geophysics community to discuss the future of geodetic-geophysical observational networks. Key topics included:</p>
-                <ul style="margin: 1rem 0 1rem 2rem; line-height: 1.8;">
-                    <li>• Future of POLENET and other observational networks</li>
-                    <li>• Integration with ITGC (International Thwaites Glacier Collaboration)</li>
-                    <li>• Data management and sharing protocols</li>
-                    <li>• Infrastructure and logistical planning</li>
-                    <li>• Early career researcher opportunities</li>
-                </ul>
-                <p><strong>Participants:</strong> ~40 researchers from institutions across the United States</p>
-                <br>
-                <a href="workshops/2024-herndon.html" class="ws-link">VIEW FULL PROGRAM →</a>
-            </div>
+            <div class="workshop-list">
+                <div class="workshop-card">
+                    <div class="workshop-header">
+                        <div class="workshop-date">September 2024 • Herndon, VA</div>
+                        <h3>INSTANT II Follow-on Workshop</h3>
+                        <p>This workshop brought together the US polar geophysics community to discuss the future of geodetic-geophysical observational networks. Key topics included future of POLENET, integration with ITGC, data management protocols, and early career opportunities.</p>
+                        <p style="margin-top: 1rem;"><strong>Participants:</strong> ~40 researchers from across the United States</p>
+                    </div>
+                    <a href="workshops/2024-herndon.html" class="btn btn-outline-small">View Program</a>
+                </div>
 
-            <div class="workshop-item">
-                <span class="ws-meta">OCTOBER 2022 • FORT COLLINS, CO</span>
-                <h3 class="ws-title">The Future of Observational Networks in Polar Regions</h3>
-                <p>The foundational workshop that established the SCAR-INSTANT "Probing the Solid Earth" (PSE) theme and defined priorities for US polar geophysics research. This workshop focused on:</p>
-                <ul style="margin: 1rem 0 1rem 2rem; line-height: 1.8;">
-                    <li>• Grand challenges in polar geophysics</li>
-                    <li>• Seismic and geodetic network design</li>
-                    <li>• Glacial isostatic adjustment (GIA) studies</li>
-                    <li>• Solid Earth-ice sheet interactions</li>
-                    <li>• International collaboration frameworks</li>
-                </ul>
-                <p><strong>Participants:</strong> ~50 researchers including international collaborators</p>
-                <p><strong>Outcome:</strong> Workshop report published and distributed to the community</p>
-                <br>
-                <a href="workshops/2022-fortcollins.html" class="ws-link">VIEW WORKSHOP REPORT →</a>
+                <div class="workshop-card">
+                    <div class="workshop-header">
+                        <div class="workshop-date">October 2022 • Fort Collins, CO</div>
+                        <h3>The Future of Observational Networks in Polar Regions</h3>
+                        <p>The foundational workshop that established the SCAR-INSTANT "Probing the Solid Earth" (PSE) theme. This workshop defined priorities for US polar geophysics research, including grand challenges, network design, and international collaboration frameworks.</p>
+                        <p style="margin-top: 1rem;"><strong>Participants:</strong> ~50 researchers including international collaborators</p>
+                    </div>
+                    <a href="workshops/2022-fortcollins.html" class="btn btn-outline-small">View Report</a>
+                </div>
             </div>
         </section>
 
-        <section class="mt-3" style="background: var(--light-gray); padding: 3rem; margin: 4rem -2rem 0;">
-            <h2 class="section-title">Workshop Resources</h2>
-            <p class="intro-text">Looking for presentations, reports, or participant lists from past workshops?</p>
+        <section class="mt-3 section section-light" style="margin: 4rem -2rem; padding: 3rem 2rem;">
+            <h2 class="section-heading">Workshop Resources</h2>
+            <p class="section-intro">Access presentations, reports, and materials from past workshops</p>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
-                <div style="background: white; padding: 2rem; border-radius: 3px;">
-                    <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">📊 Presentations</h3>
-                    <p style="color: #666; font-size: 0.95rem;">Access slide decks and posters from workshop sessions</p>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Presentations</h3>
+                    <p>Slide decks and posters from workshop sessions</p>
                 </div>
-                <div style="background: white; padding: 2rem; border-radius: 3px;">
-                    <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">📄 Reports</h3>
-                    <p style="color: #666; font-size: 0.95rem;">Read detailed summaries and findings from each workshop</p>
+                <div class="feature-card">
+                    <div class="feature-icon">📄</div>
+                    <h3>Reports</h3>
+                    <p>Detailed summaries and findings</p>
                 </div>
-                <div style="background: white; padding: 2rem; border-radius: 3px;">
-                    <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">👥 Participants</h3>
-                    <p style="color: #666; font-size: 0.95rem;">Connect with attendees and collaborators</p>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Participants</h3>
+                    <p>Connect with attendees and collaborators</p>
                 </div>
             </div>
         </section>
 
     </div>
 
+    <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
+        <div class="footer-container">
             <div class="footer-section">
-                <h2 style="color:white; margin-bottom:0.5rem;">USAge Collaborations</h2>
-                <p style="opacity:0.8; margin-bottom: 1rem;">US Antarctica / Arctic Geophysical Explorations</p>
-                <p style="font-size: 0.9rem; opacity: 0.7; line-height: 1.6;">
-                    This material is based upon work supported by the National Science Foundation under grant number <strong>OPP-2235061</strong>. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
+                <h3>USAGE Collaborations</h3>
+                <p>US Antarctica / Arctic Geophysical Explorations</p>
+                <p class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="workshops.html">Workshops</a>
+                    <a href="news.html">News</a>
+                    <a href="team.html">Team</a>
+                    <a href="publications.html">Publications</a>
                 </p>
             </div>
-            <div class="footer-section" style="text-align: right;">
-                <h3 style="color:white; margin-bottom: 1rem; font-size: 1.1rem;">Contact</h3>
-                <p><a href="/cdn-cgi/l/email-protection#2176444852444f0f7249444f6152554e4f5843534e4e4a0f444554" style="color:white; text-decoration: underline;"><span class="__cf_email__" data-cfemail="4d1a28243e2823631e2528230d3e392223342f3f22222663282938">[email&#160;protected]</span></a></p>
-                <p style="margin-top: 1.5rem; opacity: 0.7; font-size: 0.85rem;">
-                    © 2026 USAge Collaboration
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><a href="mailto:Weisen.Shen@stonybrook.edu">Weisen.Shen@stonybrook.edu</a></p>
+            </div>
+        </div>
+        <div class="footer-disclaimer">
+            <p>This material is based upon work supported by the National Science Foundation under grant number <strong>OPP-2235061</strong>. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.</p>
+            <p class="footer-copyright">© 2026 USAGE Collaborations | In partnership with SCAR-INSTANT PSE</p>
+        </div>
+    </footer>
+
+</body>
+</html>
