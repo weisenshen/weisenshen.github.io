@@ -176,6 +176,55 @@ img {
     }
 }
 
+/* --- DROPDOWN MENU --- */
+.nav-dropdown {
+    position: relative;
+}
+
+.dropdown-trigger {
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 220px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-radius: 4px;
+    padding: 0.5rem 0;
+    margin-top: 0.5rem;
+    z-index: 1000;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    list-style: none;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.75rem 1.25rem;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+    background: var(--bg-light);
+    color: var(--secondary-color);
+}
+
+.dropdown-menu a::after {
+    display: none;
+}
+
 /* --- HERO SECTION --- */
 .hero {
     background: linear-gradient(rgba(0, 61, 92, 0.6), rgba(0, 119, 190, 0.45)), 
@@ -220,10 +269,18 @@ img {
     letter-spacing: 0.5px;
 }
 
-.hero-acronym strong {
+.hero-acronym .acronym-letter {
+    font-weight: 700;
+    font-size: 2rem;
+    color: #FFD700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-acronym .acronym-full {
     font-weight: 700;
     font-size: 1.5rem;
-    color: #ffffff;
+    color: #FFD700;
+    margin-left: 0.5rem;
 }
 
 .hero-description {
