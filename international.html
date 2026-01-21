@@ -3,30 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>International Collaborations and Coordinations | USAGE</title>
+    <meta name="description" content="International Collaborations and Coordinations - USAGE partnerships with SCAR programs">
+    <title>International Collaborations | USAGE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Crimson+Pro:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles specific to International page */
+        .page-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 4rem 0 3rem;
+            text-align: center;
+        }
+        .page-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .page-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+        .program-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 3rem;
+            overflow: hidden;
+            border-left: 4px solid var(--secondary-color);
+        }
+        .program-header {
+            background: linear-gradient(135deg, #f4f4f4 0%, #e8e8e8 100%);
+            padding: 2rem;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+        .program-header h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin: 0 0 0.5rem 0;
+            font-weight: 700;
+        }
+        .program-subtitle {
+            font-size: 1.1rem;
+            color: #555;
+            margin: 0;
+            font-style: italic;
+        }
+        .program-content {
+            padding: 2rem;
+        }
+        .program-content h4 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin: 2rem 0 1rem 0;
+            font-weight: 600;
+        }
+        .program-content p {
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+        .program-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .program-content ul li {
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+            position: relative;
+            line-height: 1.6;
+        }
+        .program-content ul li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+        .program-highlight {
+            background: #e6f3ff;
+            border-left: 4px solid var(--secondary-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+        .program-highlight h4 {
+            margin-top: 0;
+        }
+        .program-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        .theme-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .theme-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 6px;
+            border-left: 3px solid var(--secondary-color);
+        }
+        .theme-item strong {
+            display: block;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        .ipy-opportunities {
+            list-style: none;
+            padding-left: 0;
+            max-width: 900px;
+            margin: 2rem auto;
+        }
+        .ipy-opportunities li {
+            padding: 1rem 1rem 1rem 3rem;
+            margin-bottom: 1rem;
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            position: relative;
+            line-height: 1.6;
+        }
+        .ipy-opportunities li:before {
+            content: "❄";
+            position: absolute;
+            left: 1rem;
+            font-size: 1.5rem;
+        }
+    </style>
 </head>
 <body>
+
     <!-- Navigation -->
-    <nav class="nav">
+    <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <span class="logo-icon">❄</span>
-                <span class="logo-text">USAGE<br><span class="logo-subtext">Collaborations</span></span>
+            <a href="index.html" class="logo">
+                <div class="logo-icon">❄</div>
+                <div class="logo-text">
+                    <span class="logo-main">USAGE</span>
+                    <span class="logo-sub">Collaborations</span>
+                </div>
             </a>
+            
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#about">About</a></li>
-                <li class="dropdown">
-                    <a href="#">Events ▾</a>
+                <li class="nav-dropdown">
+                    <a href="#" class="dropdown-trigger">Events ▾</a>
                     <ul class="dropdown-menu">
                         <li><a href="events/2022-fortcollins.html">2022 Fort Collins Workshop</a></li>
                         <li><a href="events/2024-washingtondc.html">2024 DC Workshop</a></li>
                         <li><a href="events/future.html">Future Events</a></li>
                     </ul>
                 </li>
-                <li><a href="international.html" class="active">International</a></li>
+                <li><a href="international.html" style="font-weight: 600; color: var(--secondary-color);">International</a></li>
                 <li><a href="news.html">News</a></li>
                 <li><a href="team.html">Team</a></li>
                 <li><a href="publications.html">Publications</a></li>
@@ -35,10 +173,10 @@
     </nav>
 
     <!-- Page Header -->
-    <section class="page-header">
+    <section class="page-hero">
         <div class="container">
             <h1>International Collaborations and Coordinations</h1>
-            <p class="page-subtitle">
+            <p>
                 USAGE works closely with international scientific organizations to advance polar geophysics research 
                 and foster global collaboration in understanding Earth's polar regions.
             </p>
@@ -46,9 +184,9 @@
     </section>
 
     <!-- SCAR Programs Section -->
-    <section class="content-section">
+    <section class="section section-light">
         <div class="container">
-            <h2>SCAR Research Programs</h2>
+            <h2 class="section-heading">SCAR Research Programs</h2>
             <p class="section-intro">
                 The Scientific Committee on Antarctic Research (SCAR) coordinates international scientific research 
                 in Antarctica and the Southern Ocean. USAGE aligns with and contributes to several key SCAR programs 
@@ -206,17 +344,17 @@
     </section>
 
     <!-- Collaboration Opportunities -->
-    <section class="collaboration-section">
+    <section class="section">
         <div class="container">
-            <h2>Collaboration Opportunities</h2>
+            <h2 class="section-heading">Collaboration Opportunities</h2>
             <p class="section-intro">
                 USAGE facilitates connections between US researchers and international collaborators through 
                 various mechanisms:
             </p>
 
-            <div class="opportunity-grid">
-                <div class="opportunity-card">
-                    <div class="opportunity-icon">🌍</div>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
                     <h3>International Workshops</h3>
                     <p>
                         Our workshops bring together researchers from multiple countries to share results, 
@@ -224,8 +362,8 @@
                     </p>
                 </div>
 
-                <div class="opportunity-card">
-                    <div class="opportunity-icon">📊</div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
                     <h3>Data Sharing</h3>
                     <p>
                         Facilitating access to and integration of geophysical data collected by international 
@@ -233,8 +371,8 @@
                     </p>
                 </div>
 
-                <div class="opportunity-card">
-                    <div class="opportunity-icon">🔬</div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔬</div>
                     <h3>Joint Research Projects</h3>
                     <p>
                         Supporting development of collaborative research proposals that leverage complementary 
@@ -242,8 +380,8 @@
                     </p>
                 </div>
 
-                <div class="opportunity-card">
-                    <div class="opportunity-icon">🎓</div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎓</div>
                     <h3>Student Exchange</h3>
                     <p>
                         Promoting international collaboration at the early career stage through student 
@@ -255,10 +393,10 @@
     </section>
 
     <!-- IPY Planning -->
-    <section class="ipy-planning-section">
+    <section class="section section-light">
         <div class="container">
-            <h2>International Polar Year 2032-33 Planning</h2>
-            <p>
+            <h2 class="section-heading">International Polar Year 2032-33 Planning</h2>
+            <p class="section-intro">
                 As the international community prepares for the next International Polar Year (IPY 2032-33), 
                 USAGE is working with SCAR and other organizations to coordinate US contributions to this 
                 major international effort. The upcoming IPY presents unprecedented opportunities for:
@@ -270,63 +408,61 @@
                 <li>Training the next generation of polar geoscientists through international collaboration</li>
                 <li>Public engagement and communication of polar science to global audiences</li>
             </ul>
-            <p>
+            <p class="section-intro">
                 Stay tuned for announcements about IPY planning workshops and opportunities to get involved.
             </p>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact-section">
+    <!-- Get Involved -->
+    <section class="section cta-section">
         <div class="container">
-            <h2>Get Involved in International Collaborations</h2>
-            <p>
-                Interested in participating in international collaborations or learning more about how USAGE 
-                connects with global research programs? Contact us to explore opportunities.
-            </p>
-            <div class="contact-buttons">
-                <a href="mailto:usage@example.com" class="btn btn-primary">Contact Us</a>
-                <a href="index.html#about" class="btn btn-secondary">Learn More About USAGE</a>
+            <div class="cta-content">
+                <h2>Get Involved in International Collaborations</h2>
+                <p>
+                    Interested in participating in international collaborations or learning more about how USAGE 
+                    connects with global research programs? Contact us to explore opportunities.
+                </p>
+                <div class="cta-buttons">
+                    <a href="/cdn-cgi/l/email-protection#6433010d17010a4a370c010a2417100b0a1d06160b0b0f4a010011" class="btn btn-primary">Contact Us</a>
+                    <a href="index.html#about" class="btn btn-secondary">Learn More About USAGE</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>USAGE Collaborations</h3>
-                    <p>US Antarctica / Arctic Geophysical Explorations</p>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="events/future.html">Events</a></li>
-                        <li><a href="international.html">International</a></li>
-                        <li><a href="news.html">News</a></li>
-                        <li><a href="team.html">Team</a></li>
-                        <li><a href="publications.html">Publications</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p><a href="mailto:usage@example.com">usage@example.com</a></p>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>
-                    This material is based upon work supported by the National Science Foundation under grant number 
-                    <strong>OPP-2235061</strong>. Any opinions, findings, and conclusions or recommendations expressed 
-                    in this material are those of the author(s) and do not necessarily reflect the views of the 
-                    National Science Foundation.
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>USAGE Collaborations</h3>
+                <p>US Antarctica / Arctic Geophysical Explorations</p>
+                <p class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="events/future.html">Events</a>
+                    <a href="international.html">International</a>
+                    <a href="news.html">News</a>
+                    <a href="team.html">Team</a>
+                    <a href="publications.html">Publications</a>
                 </p>
             </div>
+
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><a href="/cdn-cgi/l/email-protection#b0e7d5d9c3d5de9ee3d8d5def0c3c4dfdec9d2c2dfdfdb9ed5d4c5"><span class="__cf_email__" data-cfemail="3f685a564c5a51116c575a517f4c4b5051465d4d505054115a5b4a">[email&#160;protected]</span></a></p>
+            </div>
+        </div>
+
+        <div class="footer-disclaimer">
+            <p>
+                This material is based upon work supported by the National Science Foundation under grant number 
+                <strong>OPP-2235061</strong>. Any opinions, findings, and conclusions or recommendations expressed 
+                in this material are those of the author(s) and do not necessarily reflect the views of the 
+                National Science Foundation.
+            </p>
         </div>
     </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 </body>
 </html>

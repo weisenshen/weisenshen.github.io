@@ -167,6 +167,11 @@ img {
     width: 100%;
 }
 
+.nav-menu a.active {
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
 @media (max-width: 768px) {
     .nav-menu {
         gap: 1rem;
@@ -251,6 +256,29 @@ img {
 .hero-content {
     max-width: 900px;
     margin: 0 auto;
+}
+
+/* Hero Badge - highlighted NSF/SCAR text */
+.hero-badge {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 61, 92, 0.3);
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+    max-width: 95%;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .hero-badge {
+        font-size: 0.85rem;
+        padding: 0.6rem 1.2rem;
+    }
 }
 
 .hero-title {
@@ -378,7 +406,7 @@ img {
     font-size: 1.15rem;
     color: var(--text-light);
     max-width: 800px;
-    margin-bottom: var(--spacing-lg);
+    margin: 0 auto 2rem;
     line-height: 1.8;
 }
 
@@ -434,12 +462,13 @@ img {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 2rem;
+    margin-top: var(--spacing-lg);
 }
 
 .news-card {
     background: white;
+    padding: 2rem;
     border-radius: 8px;
-    padding: 1.75rem;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     transition: var(--transition);
 }
@@ -450,12 +479,12 @@ img {
 }
 
 .news-date {
-    font-size: 0.85rem;
-    font-weight: 700;
     color: var(--secondary-color);
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    margin-bottom: 0.75rem;
 }
 
 .news-card h3 {
@@ -466,13 +495,13 @@ img {
 
 .news-card p {
     color: var(--text-light);
+    line-height: 1.7;
     margin-bottom: 1rem;
-    line-height: 1.6;
 }
 
 .card-link {
-    font-weight: 600;
     color: var(--secondary-color);
+    font-weight: 600;
     font-size: 0.9rem;
 }
 
@@ -480,77 +509,23 @@ img {
     text-decoration: underline;
 }
 
-/* --- WORKSHOP LIST --- */
-.workshop-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.workshop-card {
-    background: white;
-    border-radius: 8px;
-    padding: 2rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
-    transition: var(--transition);
-}
-
-.workshop-card:hover {
-    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-}
-
-.workshop-header {
-    flex: 1;
-}
-
-.workshop-date {
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--secondary-color);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 0.5rem;
-}
-
-.workshop-card h3 {
-    font-size: 1.4rem;
-    margin-bottom: 0.75rem;
-    color: var(--primary-color);
-}
-
-.workshop-card p {
-    color: var(--text-light);
-    line-height: 1.7;
-}
-
-@media (max-width: 768px) {
-    .workshop-card {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}
-
 /* --- CTA SECTION --- */
 .cta-section {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
     text-align: center;
 }
 
 .cta-content h2 {
     color: white;
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
 }
 
 .cta-content p {
     font-size: 1.15rem;
-    margin-bottom: 2rem;
     opacity: 0.95;
+    margin-bottom: 2rem;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
@@ -672,23 +647,25 @@ img {
 
 /* --- PAGE SPECIFIC STYLES --- */
 .page-header {
-    background: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: white;
-    padding: var(--spacing-xl) var(--spacing-md);
+    padding: 4rem 2rem 3rem;
     text-align: center;
 }
 
 .page-header h1 {
     color: white;
-    font-size: 2.75rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
+    font-weight: 700;
 }
 
 .page-header p {
     font-size: 1.15rem;
-    opacity: 0.9;
+    opacity: 0.95;
     max-width: 800px;
     margin: 0 auto;
+    line-height: 1.6;
 }
 
 .page-content {
@@ -697,84 +674,34 @@ img {
     padding: var(--spacing-xl) var(--spacing-md);
 }
 
-/* --- UTILITY CLASSES --- */
-.text-center { text-align: center; }
-.mb-1 { margin-bottom: var(--spacing-xs); }
-.mb-2 { margin-bottom: var(--spacing-sm); }
-.mb-3 { margin-bottom: var(--spacing-md); }
-.mt-1 { margin-top: var(--spacing-xs); }
-.mt-2 { margin-top: var(--spacing-sm); }
-.mt-3 { margin-top: var(--spacing-md); }
-/* Additional CSS styles for International page and highlights */
-/* Add these styles to your existing css/style.css file */
-
-/* Highlighted hero badge - make it stand out */
-.hero-badge {
-    background: linear-gradient(135deg, #003366 0%, #1e5a8e 100%);
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    display: inline-block;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 15px rgba(0, 51, 102, 0.3);
-    font-size: 1.1rem;
-    font-weight: 600;
-    text-align: center;
-    max-width: 90%;
-}
-
-.hero-badge strong {
-    font-weight: 700;
-}
-
-/* Page header styles */
-.page-header {
-    background: linear-gradient(135deg, #003366 0%, #1e5a8e 100%);
-    color: white;
-    padding: 4rem 0 3rem;
-    text-align: center;
-}
-
-.page-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
-}
-
-.page-subtitle {
-    font-size: 1.2rem;
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.6;
-    opacity: 0.95;
-}
+/* --- INTERNATIONAL PAGE STYLES --- */
 
 /* Program card styles */
 .program-card {
     background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
     margin-bottom: 3rem;
     overflow: hidden;
-    border-left: 4px solid #003366;
+    border-left: 4px solid var(--secondary-color);
 }
 
 .program-header {
-    background: linear-gradient(135deg, #f4f4f4 0%, #e8e8e8 100%);
+    background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-gray) 100%);
     padding: 2rem;
-    border-bottom: 2px solid #003366;
+    border-bottom: 2px solid var(--secondary-color);
 }
 
 .program-header h3 {
     font-size: 2rem;
-    color: #003366;
+    color: var(--primary-color);
     margin: 0 0 0.5rem 0;
     font-weight: 700;
 }
 
 .program-subtitle {
     font-size: 1.1rem;
-    color: #555;
+    color: var(--text-light);
     margin: 0;
     font-style: italic;
 }
@@ -784,8 +711,8 @@ img {
 }
 
 .program-content h4 {
-    color: #003366;
-    font-size: 1.4rem;
+    color: var(--primary-color);
+    font-size: 1.3rem;
     margin: 2rem 0 1rem 0;
     font-weight: 600;
 }
@@ -793,7 +720,7 @@ img {
 .program-content p {
     line-height: 1.8;
     margin-bottom: 1.5rem;
-    color: #333;
+    color: var(--text-dark);
 }
 
 .program-content ul {
@@ -812,7 +739,7 @@ img {
     content: "▸";
     position: absolute;
     left: 0;
-    color: #4da8da;
+    color: var(--secondary-color);
     font-weight: bold;
 }
 
@@ -825,29 +752,30 @@ img {
 }
 
 .theme-item {
-    background: #f8f9fa;
+    background: var(--bg-light);
     padding: 1.5rem;
-    border-radius: 8px;
-    border-left: 3px solid #4da8da;
+    border-radius: 6px;
+    border-left: 3px solid var(--secondary-color);
 }
 
 .theme-item strong {
     display: block;
-    color: #003366;
+    color: var(--primary-color);
     margin-bottom: 0.5rem;
+    font-weight: 700;
 }
 
 /* Program highlight box */
 .program-highlight {
     background: #e6f3ff;
-    border-left: 4px solid #4da8da;
+    border-left: 4px solid var(--secondary-color);
     padding: 1.5rem;
     margin: 2rem 0;
-    border-radius: 8px;
+    border-radius: 4px;
 }
 
 .program-highlight h4 {
-    color: #003366;
+    color: var(--primary-color);
     margin-top: 0;
 }
 
@@ -859,26 +787,19 @@ img {
     flex-wrap: wrap;
 }
 
-/* Opportunity grid */
-.opportunity-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
+/* Opportunity grid - reuse feature-grid styling with custom cards */
 .opportunity-card {
     background: white;
     padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: var(--transition);
 }
 
 .opportunity-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
 }
 
 .opportunity-icon {
@@ -887,22 +808,17 @@ img {
 }
 
 .opportunity-card h3 {
-    color: #003366;
+    color: var(--primary-color);
     font-size: 1.3rem;
     margin-bottom: 1rem;
 }
 
 .opportunity-card p {
-    color: #555;
+    color: var(--text-light);
     line-height: 1.6;
 }
 
-/* IPY Planning Section */
-.ipy-planning-section {
-    background: #f8f9fa;
-    padding: 4rem 0;
-}
-
+/* IPY opportunities list */
 .ipy-opportunities {
     list-style: none;
     padding-left: 0;
@@ -914,7 +830,7 @@ img {
     padding: 1rem 1rem 1rem 3rem;
     margin-bottom: 1rem;
     background: white;
-    border-radius: 8px;
+    border-radius: 6px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     position: relative;
     line-height: 1.6;
@@ -927,43 +843,19 @@ img {
     font-size: 1.5rem;
 }
 
-/* Collaboration and Contact Sections */
-.collaboration-section,
-.contact-section {
-    padding: 4rem 0;
-}
+/* --- UTILITY CLASSES --- */
+.text-center { text-align: center; }
+.mb-1 { margin-bottom: var(--spacing-xs); }
+.mb-2 { margin-bottom: var(--spacing-sm); }
+.mb-3 { margin-bottom: var(--spacing-md); }
+.mt-1 { margin-top: var(--spacing-xs); }
+.mt-2 { margin-top: var(--spacing-sm); }
+.mt-3 { margin-top: var(--spacing-md); }
 
-.contact-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    margin-top: 2rem;
-    flex-wrap: wrap;
-}
-
-/* Section intro styling */
-.section-intro {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    max-width: 900px;
-    margin: 0 auto 2rem;
-    color: #555;
-}
-
-/* Active navigation link */
-.nav-menu a.active {
-    color: #4da8da;
-    font-weight: 600;
-}
-
-/* Responsive adjustments */
+/* --- RESPONSIVE ADJUSTMENTS --- */
 @media (max-width: 768px) {
     .page-header h1 {
         font-size: 2rem;
-    }
-    
-    .page-subtitle {
-        font-size: 1rem;
     }
     
     .program-header h3 {
@@ -974,10 +866,6 @@ img {
         grid-template-columns: 1fr;
     }
     
-    .opportunity-grid {
-        grid-template-columns: 1fr;
-    }
-    
     .program-links {
         flex-direction: column;
     }
@@ -985,10 +873,5 @@ img {
     .program-links .btn {
         width: 100%;
         text-align: center;
-    }
-    
-    .hero-badge {
-        font-size: 0.95rem;
-        padding: 0.8rem 1.5rem;
     }
 }
