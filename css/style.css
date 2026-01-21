@@ -705,3 +705,290 @@ img {
 .mt-1 { margin-top: var(--spacing-xs); }
 .mt-2 { margin-top: var(--spacing-sm); }
 .mt-3 { margin-top: var(--spacing-md); }
+/* Additional CSS styles for International page and highlights */
+/* Add these styles to your existing css/style.css file */
+
+/* Highlighted hero badge - make it stand out */
+.hero-badge {
+    background: linear-gradient(135deg, #003366 0%, #1e5a8e 100%);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    display: inline-block;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 51, 102, 0.3);
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    max-width: 90%;
+}
+
+.hero-badge strong {
+    font-weight: 700;
+}
+
+/* Page header styles */
+.page-header {
+    background: linear-gradient(135deg, #003366 0%, #1e5a8e 100%);
+    color: white;
+    padding: 4rem 0 3rem;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    opacity: 0.95;
+}
+
+/* Program card styles */
+.program-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 3rem;
+    overflow: hidden;
+    border-left: 4px solid #003366;
+}
+
+.program-header {
+    background: linear-gradient(135deg, #f4f4f4 0%, #e8e8e8 100%);
+    padding: 2rem;
+    border-bottom: 2px solid #003366;
+}
+
+.program-header h3 {
+    font-size: 2rem;
+    color: #003366;
+    margin: 0 0 0.5rem 0;
+    font-weight: 700;
+}
+
+.program-subtitle {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 0;
+    font-style: italic;
+}
+
+.program-content {
+    padding: 2rem;
+}
+
+.program-content h4 {
+    color: #003366;
+    font-size: 1.4rem;
+    margin: 2rem 0 1rem 0;
+    font-weight: 600;
+}
+
+.program-content p {
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.program-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.program-content ul li {
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.program-content ul li:before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #4da8da;
+    font-weight: bold;
+}
+
+/* Theme grid */
+.theme-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.theme-item {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 3px solid #4da8da;
+}
+
+.theme-item strong {
+    display: block;
+    color: #003366;
+    margin-bottom: 0.5rem;
+}
+
+/* Program highlight box */
+.program-highlight {
+    background: #e6f3ff;
+    border-left: 4px solid #4da8da;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 8px;
+}
+
+.program-highlight h4 {
+    color: #003366;
+    margin-top: 0;
+}
+
+/* Program links */
+.program-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Opportunity grid */
+.opportunity-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.opportunity-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.opportunity-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+}
+
+.opportunity-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.opportunity-card h3 {
+    color: #003366;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.opportunity-card p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* IPY Planning Section */
+.ipy-planning-section {
+    background: #f8f9fa;
+    padding: 4rem 0;
+}
+
+.ipy-opportunities {
+    list-style: none;
+    padding-left: 0;
+    max-width: 900px;
+    margin: 2rem auto;
+}
+
+.ipy-opportunities li {
+    padding: 1rem 1rem 1rem 3rem;
+    margin-bottom: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: relative;
+    line-height: 1.6;
+}
+
+.ipy-opportunities li:before {
+    content: "❄";
+    position: absolute;
+    left: 1rem;
+    font-size: 1.5rem;
+}
+
+/* Collaboration and Contact Sections */
+.collaboration-section,
+.contact-section {
+    padding: 4rem 0;
+}
+
+.contact-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Section intro styling */
+.section-intro {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto 2rem;
+    color: #555;
+}
+
+/* Active navigation link */
+.nav-menu a.active {
+    color: #4da8da;
+    font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .page-header h1 {
+        font-size: 2rem;
+    }
+    
+    .page-subtitle {
+        font-size: 1rem;
+    }
+    
+    .program-header h3 {
+        font-size: 1.5rem;
+    }
+    
+    .theme-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .opportunity-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .program-links {
+        flex-direction: column;
+    }
+    
+    .program-links .btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .hero-badge {
+        font-size: 0.95rem;
+        padding: 0.8rem 1.5rem;
+    }
+}
