@@ -145,12 +145,12 @@ p {
 .lead {
   max-width: 760px;
   color: #2c3432;
-  font-size: 16px;
-  line-height: 1.55;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 .contact-line {
-  font-size: 15px;
+  font-size: inherit;
 }
 
 .hero-photo {
@@ -203,6 +203,35 @@ time {
 
 .compact-grid p {
   margin-top: 6px;
+}
+
+.project-list {
+  display: grid;
+  gap: 28px;
+}
+
+.project-item {
+  display: grid;
+  grid-template-columns: minmax(160px, 220px) minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.project-figure {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  margin: 0;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(135deg, transparent 49%, var(--line) 50%, transparent 51%),
+    linear-gradient(45deg, transparent 49%, var(--line) 50%, transparent 51%),
+    var(--panel);
+}
+
+.teaching-list {
+  display: grid;
+  gap: 22px;
 }
 
 .plain-list {
@@ -354,10 +383,11 @@ code {
   }
 
   .lead {
-    font-size: 16px;
+    font-size: inherit;
   }
 
   .compact-grid,
+  .project-item,
   .people-groups,
   .metrics {
     grid-template-columns: 1fr;
