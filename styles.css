@@ -474,10 +474,6 @@ time {
   margin: 0 auto 22px;
 }
 
-.post-image-wide {
-  max-width: 100%;
-}
-
 .post-image img {
   display: block;
   width: 100%;
