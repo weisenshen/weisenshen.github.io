@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="A project note on building a ZCTA-scale environmental quality index for clean air and clean water in the United States."
+    >
+    <title>Clean Air, Clean Water, and the ZIP Code Problem | Weisen Shen</title>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="site-title" href="../index.html">Weisen Shen</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+        <a href="../index.html">about</a>
+        <a href="../research.html">research</a>
+        <a href="../publications.html">publications</a>
+        <a href="../teaching.html">teaching</a>
+        <a href="../people.html">people</a>
+        <a href="../community.html">community</a>
+        <a class="active" href="../thoughts.html">thoughts</a>
+        <a href="../resume.html">resume</a>
+      </nav>
+    </header>
+
+    <main>
+      <article class="post">
+        <header class="section page-title post-header">
+          <p class="post-date">
+            <time datetime="2026-06-29">Monday, June 29, 2026</time>
+          </p>
+          <h1>Clean Air, Clean Water, and the ZIP Code Problem</h1>
+        </header>
+
+        <section class="section post-body">
+          <p>
+            Clean air and clean water are easy to praise and hard to measure well. The hard part is
+            not the slogan. The hard part is geography, data gaps, and the fact that missing data
+            is not the same thing as safety.
+          </p>
+          <p>
+            I am thinking about a small, modular Python project that ranks U.S. ZIP Code
+            Tabulation Areas, or ZCTAs, by air and water quality. Not USPS ZIP codes. Census ZCTAs.
+            Close enough to be useful for public reasoning; precise enough to avoid pretending
+            that postal routes are environmental units.
+          </p>
+          <p>
+            The project should live outside my Antarctica plotting work, probably at:
+            <code>/Users/weisenshen/Work/us-zcta-environmental-index</code>.
+          </p>
+
+          <h2>The basic idea</h2>
+          <p>
+            Start with geography. Download Census TIGER/Line ZCTA shapefiles, preserve the polygon
+            geometry, calculate centroids, and keep Census internal points. Every later data join
+            depends on getting this part right.
+          </p>
+          <p>
+            Then add air. EPA AirData provides PM2.5 and ozone measurements from monitors. Those
+            monitors do not sit inside every ZCTA, so the pipeline needs nearest-monitor mapping
+            or inverse distance weighting. Approximation is allowed. Silent approximation is not.
+          </p>
+          <p>
+            Then add water. EPA drinking-water data is harder because public water systems do not
+            map cleanly onto ZCTAs. Public Water System IDs need to be connected to service areas
+            and ZIP/ZCTA geographies where possible. Areas likely served by private wells, or areas
+            with insufficient public data, need to be flagged explicitly.
+          </p>
+
+          <h2>Scoring without lying</h2>
+          <p>
+            A 0-100 index is useful only if it keeps its caveats visible. Air and water metrics can
+            be normalized with min-max scaling and combined with transparent weights. But every
+            score should carry data-quality flags:
+          </p>
+          <ul class="plain-list">
+            <li>missing air data</li>
+            <li>missing water data</li>
+            <li>likely private-well areas</li>
+            <li>low-confidence spatial assignments</li>
+          </ul>
+          <p>
+            A place with no water-system record is not automatically clean. Sometimes the silence
+            is the signal.
+          </p>
+
+          <h2>Phase 1</h2>
+          <p>
+            The first implementation phase should be boring on purpose:
+          </p>
+          <ol class="plain-list">
+            <li>Download the Census TIGER/Line ZCTA shapefile.</li>
+            <li>Validate the ZIP archive and required columns.</li>
+            <li>Load polygons with GeoPandas.</li>
+            <li>Calculate centroids in a projected CRS.</li>
+            <li>Export a GeoPackage and a centroid CSV.</li>
+          </ol>
+          <p>
+            The derived table should include clean ZCTA codes, projected centroid longitude and
+            latitude, Census internal-point coordinates, and land and water area in square
+            kilometers.
+          </p>
+
+          <h2>Working rules</h2>
+          <p>
+            Build one phase at a time. Explain input schemas before writing code. Use modular
+            Python. Handle download failures, missing columns, empty datasets, invalid geometry,
+            CRS mistakes, and missing metric values explicitly.
+          </p>
+          <p>
+            Preferred tools are familiar: <code>pandas</code>, <code>geopandas</code>,
+            <code>requests</code>, <code>scikit-learn</code>, <code>shapely</code>, and
+            <code>pyproj</code>.
+          </p>
+          <p>
+            GitHub should hold code, schemas, documentation, tests, and small reference files. It
+            should not hold Census shapefiles, EPA raw downloads, GeoPackages, large processed
+            datasets, or generated outputs.
+          </p>
+          <p>
+            This is the kind of project I like: concrete enough to build, messy enough to be real,
+            and public enough that the assumptions should not hide in the footnotes.
+          </p>
+        </section>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <span>&copy; <span id="year"></span> Weisen Shen</span>
+      <a href="mailto:weisen.shen@stonybrook.edu">contact</a>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>
