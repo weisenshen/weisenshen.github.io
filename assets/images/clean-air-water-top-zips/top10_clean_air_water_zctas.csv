@@ -1,0 +1,11 @@
+rank,zcta,approx_location,environmental_quality_score,air_score,water_score,pm25_annual_mean,ozone_annual_mean,aquifer_contaminant_index,aquifer_nearest_site_distance_km
+1,98368,"Port Townsend area, WA",100.0,88.906,99.559,3.935,0.031,0.43,54.345
+2,98382,"Sequim area, WA",99.908,90.266,97.395,3.55,0.031,0.997,60.402
+3,93436,"Lompoc / Vandenberg area, CA",99.63,88.345,99.904,5.45,0.027,0.094,4.536
+4,98325,"Chimacum area, WA",99.427,88.394,99.559,3.951,0.031,0.43,45.692
+5,98273,"Mount Vernon area, WA",98.804,87.837,99.559,4.616,0.03,0.43,95.143
+6,98257,"La Conner area, WA",97.922,87.049,99.559,4.916,0.029,0.43,95.7
+7,98239,"Coupeville area, WA",97.866,86.999,99.559,4.707,0.03,0.43,69.924
+8,98277,"Oak Harbor area, WA",97.649,86.805,99.559,4.941,0.03,0.43,86.462
+9,04619,"Calais area, ME",97.563,86.446,99.982,3.025,0.035,0.018,76.319
+10,98278,"Whidbey Island area, WA",97.464,86.64,99.559,4.993,0.03,0.43,87.596

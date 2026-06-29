@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
-      content="A project note on building a ZCTA-scale environmental quality index for clean air and clean water in the United States."
+      content="A prototype ranking of lower-48 Census ZCTAs by combined clean-air and clean-water indicators from EPA AirData and the Water Quality Portal."
     >
-    <title>Clean Air, Clean Water, and the ZIP Code Problem | Weisen Shen</title>
+    <title>Ten ZIP Codes With Strong Clean Air and Water Signals | Weisen Shen</title>
     <link rel="stylesheet" href="../styles.css">
   </head>
   <body>
@@ -32,97 +32,163 @@
           <p class="post-date">
             <time datetime="2026-06-29">Monday, June 29, 2026</time>
           </p>
-          <h1>Clean Air, Clean Water, and the ZIP Code Problem</h1>
+          <h1>Ten ZIP Codes With Strong Clean Air and Water Signals</h1>
+          <p>
+            A prototype ranking of lower-48 ZCTAs using EPA AirData, public well-water
+            observations, and Census geography.
+          </p>
         </header>
 
         <section class="section post-body">
           <p>
-            Clean air and clean water are easy to praise and hard to measure well. The hard part is
-            not the slogan. The hard part is geography, data gaps, and the fact that missing data
-            is not the same thing as safety.
+            What places in the United States appear to have some of the strongest combined
+            signals for clean air and clean water?
           </p>
           <p>
-            I am thinking about a small, modular Python project that ranks U.S. ZIP Code
-            Tabulation Areas, or ZCTAs, by air and water quality. Not USPS ZIP codes. Census ZCTAs.
-            Close enough to be useful for public reasoning; precise enough to avoid pretending
-            that postal routes are environmental units.
+            I built a prototype ranking to explore that question. The analysis combines public
+            air-quality observations from EPA AirData with public groundwater and well-water
+            observations from the Water Quality Portal. The geography is Census ZCTAs, which are
+            ZIP Code Tabulation Areas rather than exact USPS ZIP Code delivery areas.
           </p>
           <p>
-            The project should live outside my Antarctica plotting work, probably at:
-            <code>/Users/weisenshen/Work/us-zcta-environmental-index</code>.
-          </p>
-
-          <h2>The basic idea</h2>
-          <p>
-            Start with geography. Download Census TIGER/Line ZCTA shapefiles, preserve the polygon
-            geometry, calculate centroids, and keep Census internal points. Every later data join
-            depends on getting this part right.
-          </p>
-          <p>
-            Then add air. EPA AirData provides PM2.5 and ozone measurements from monitors. Those
-            monitors do not sit inside every ZCTA, so the pipeline needs nearest-monitor mapping
-            or inverse distance weighting. Approximation is allowed. Silent approximation is not.
-          </p>
-          <p>
-            Then add water. EPA drinking-water data is harder because public water systems do not
-            map cleanly onto ZCTAs. Public Water System IDs need to be connected to service areas
-            and ZIP/ZCTA geographies where possible. Areas likely served by private wells, or areas
-            with insufficient public data, need to be flagged explicitly.
+            This is not a drinking-water safety certification, and it is not a property-level
+            environmental report. It is a screening exercise: a way to ask where public data
+            suggest relatively strong clean-air and clean-water conditions, and where the data are
+            too sparse to support a confident answer.
           </p>
 
-          <h2>Scoring without lying</h2>
-          <p>
-            A 0-100 index is useful only if it keeps its caveats visible. Air and water metrics can
-            be normalized with min-max scaling and combined with transparent weights. But every
-            score should carry data-quality flags:
-          </p>
-          <ul class="plain-list">
-            <li>missing air data</li>
-            <li>missing water data</li>
-            <li>likely private-well areas</li>
-            <li>low-confidence spatial assignments</li>
-          </ul>
-          <p>
-            A place with no water-system record is not automatically clean. Sometimes the silence
-            is the signal.
-          </p>
+          <figure class="post-image">
+            <img
+              src="../assets/images/clean-air-water-top-zips/clean_air_water_lower48_map.png"
+              alt="Map of lower-48 ZCTA clean air and water prototype scores"
+            >
+            <figcaption>
+              Lower-48 prototype clean air and water ranking. Higher scores indicate stronger
+              combined signals in the available public data.
+            </figcaption>
+          </figure>
 
-          <h2>Phase 1</h2>
+          <h2>The top 10</h2>
           <p>
-            The first implementation phase should be boring on purpose:
+            Using the current lower-48 prototype, the top ten ZCTAs are:
           </p>
           <ol class="plain-list">
-            <li>Download the Census TIGER/Line ZCTA shapefile.</li>
-            <li>Validate the ZIP archive and required columns.</li>
-            <li>Load polygons with GeoPandas.</li>
-            <li>Calculate centroids in a projected CRS.</li>
-            <li>Export a GeoPackage and a centroid CSV.</li>
+            <li><strong>98368</strong>, Port Townsend area, Washington - score 100.00</li>
+            <li><strong>98382</strong>, Sequim area, Washington - score 99.91</li>
+            <li><strong>93436</strong>, Lompoc / Vandenberg area, California - score 99.63</li>
+            <li><strong>98325</strong>, Chimacum area, Washington - score 99.43</li>
+            <li><strong>98273</strong>, Mount Vernon area, Washington - score 98.80</li>
+            <li><strong>98257</strong>, La Conner area, Washington - score 97.92</li>
+            <li><strong>98239</strong>, Coupeville area, Washington - score 97.87</li>
+            <li><strong>98277</strong>, Oak Harbor area, Washington - score 97.65</li>
+            <li><strong>04619</strong>, Calais area, Maine - score 97.56</li>
+            <li><strong>98278</strong>, Whidbey Island area, Washington - score 97.46</li>
           </ol>
+
+          <figure class="post-image">
+            <img
+              src="../assets/images/clean-air-water-top-zips/top10_clean_air_water_zctas_bar.png"
+              alt="Bar chart of top ten lower-48 ZCTAs by prototype clean air and water score"
+            >
+            <figcaption>
+              Top ten lower-48 ZCTAs in the prototype ranking. The exact table is available as a
+              CSV in the project assets.
+            </figcaption>
+          </figure>
+
           <p>
-            The derived table should include clean ZCTA codes, projected centroid longitude and
-            latitude, Census internal-point coordinates, and land and water area in square
-            kilometers.
+            The most obvious pattern is geographic. Many of the top-ranked ZCTAs are in coastal or
+            island-influenced parts of Washington, with one ZCTA on the California Central Coast
+            and one in coastal Maine.
           </p>
 
-          <h2>Working rules</h2>
+          <h2>What the score means</h2>
           <p>
-            Build one phase at a time. Explain input schemas before writing code. Use modular
-            Python. Handle download failures, missing columns, empty datasets, invalid geometry,
-            CRS mistakes, and missing metric values explicitly.
+            The score is scaled from 0 to 100 across lower-48 ZCTAs with complete air and water
+            assignments. In this prototype, 100 means the strongest combined clean-air and
+            clean-water signal, and 0 means the weakest combined signal among fully assigned ZCTAs.
           </p>
           <p>
-            Preferred tools are familiar: <code>pandas</code>, <code>geopandas</code>,
-            <code>requests</code>, <code>scikit-learn</code>, <code>shapely</code>, and
-            <code>pyproj</code>.
+            The combined score uses 60 percent air quality and 40 percent water quality. The air
+            component combines fine particulate matter, PM2.5, and ozone using 2019-2023 rolling
+            annualized EPA AirData metrics. The water component combines arsenic, uranium,
+            fluoride, and nitrate using 2019-2023 Water Quality Portal well-water observations and
+            inverse-distance assignment from nearby monitoring wells to ZCTA centroids.
           </p>
           <p>
-            GitHub should hold code, schemas, documentation, tests, and small reference files. It
-            should not hold Census shapefiles, EPA raw downloads, GeoPackages, large processed
-            datasets, or generated outputs.
+            For the top-ranked ZCTA, <strong>98368</strong>, the prototype estimates a combined
+            score of 100.00, an air score of 88.91, and a water score of 99.56. Its estimated PM2.5
+            annual mean is 3.935, its ozone annual mean is 0.031, its aquifer contaminant index is
+            0.430, and the nearest assigned water-quality site is 54.345 km away.
           </p>
           <p>
-            This is the kind of project I like: concrete enough to build, messy enough to be real,
-            and public enough that the assumptions should not hide in the footnotes.
+            The aquifer contaminant index is a ratio to selected thresholds. Values below 1 are
+            below the threshold used in this prototype. Values above 1 indicate that at least one
+            contaminant exceeds its threshold in the underlying well data.
+          </p>
+
+          <h2>Why I am calling this a prototype</h2>
+          <p>
+            The air side of the analysis is relatively mature because EPA AirData has broad,
+            consistent national coverage.
+          </p>
+          <p>
+            The water side is harder. Public well-water data are uneven. In the current lower-48
+            all-provider Water Quality Portal run, 33,300 lower-48 ZCTAs were considered, 65,323
+            WQP result rows were used before filtering, 10,316 unique monitoring locations were
+            present, and only 6,681 unique wells were actually used in ZCTA assignment. In total,
+            28,364 ZCTAs received complete air and water rankings.
+          </p>
+          <p>
+            That is useful for a first national screen, but it is not dense enough to make strong
+            claims about every ZIP-like area in the country. The score should always be read with
+            a confidence field, a missing-data flag, and the distance to the nearest water-quality
+            sites.
+          </p>
+
+          <h2>What this is not</h2>
+          <p>
+            This ranking does not mean that the tap water in a ZCTA is safe or unsafe, that a
+            specific property has good well water, that a municipal water system is compliant or
+            noncompliant, or that a place has secure long-term water supply.
+          </p>
+          <p>
+            ZCTAs are large generalized geographies. Drinking water can come from municipal
+            systems, private wells, surface water, groundwater, imported water, or a mix of
+            sources. A ZCTA-level public-data score cannot replace site-specific testing or
+            utility-level reporting.
+          </p>
+
+          <h2>The bigger question: long-term water resilience</h2>
+          <p>
+            This exercise also shows why "clean water" should not be treated as a simple current
+            water-quality score. For long-term decision-making, I think the better concept is
+            water resilience: current raw-water quality, source sustainability, and future
+            contamination vulnerability.
+          </p>
+          <p>
+            That means looking not only at measured contaminants, but also at groundwater trends,
+            aquifer context, drought sensitivity, land use, septic density, industrial
+            contamination pressure, and coastal saltwater intrusion risk.
+          </p>
+          <p>
+            Some of these properties are difficult to measure precisely everywhere. Aquifer
+            storage, saturated thickness, recharge, and transmissivity are not consistently
+            available at ZIP or ZCTA scale nationwide. A responsible model should not pretend
+            otherwise. It should separate measured evidence, proxy indicators, and uncertainty.
+          </p>
+
+          <h2>Next steps</h2>
+          <p>
+            My next step is to improve the water component: extend groundwater observations beyond
+            2019-2023, add salinity indicators such as total dissolved solids and chloride, add
+            broader nitrate aliases, add monitoring density and recency fields, and build a
+            long-term water resilience prototype for New York and Long Island.
+          </p>
+          <p>
+            The broader goal is to move from a simple environmental ranking toward an explainable
+            environmental resilience model: one that connects Earth science data to real decisions
+            in housing, infrastructure, finance, insurance, and public policy.
           </p>
         </section>
       </article>
